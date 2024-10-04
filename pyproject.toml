@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "sf-ff-service"
+version = "0.1.0"
+description = "SFFD EMS Analysis"
+authors = ["domfj <dfannjiang@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+jupyter-book = "^1.0.2"
+ipykernel = "^6.29.5"
+pandas = "^2.2.3"
+ghp-import = "^2.1.0"
+numpy = "^2.1.1"
+scikit-learn = "^1.5.2"
+scipy = "^1.14.1"
+seaborn = "^0.13.2"
+matplotlib = "^3.9.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
