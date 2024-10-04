@@ -2477,6 +2477,20 @@ files = [
 ]
 
 [[package]]
+name = "sodapy"
+version = "2.2.0"
+description = "Python library for the Socrata Open Data API"
+optional = false
+python-versions = "*"
+files = [
+    {file = "sodapy-2.2.0-py2.py3-none-any.whl", hash = "sha256:18f13bdec1891f3430ea138354d4aa4a1adfb77893a2f0d577601024221157c4"},
+    {file = "sodapy-2.2.0.tar.gz", hash = "sha256:58af376d3bb0dc3a1edc7c8cf9938f5de8f558b35e240438dd83647ac3621981"},
+]
+
+[package.dependencies]
+requests = ">=2.28.1"
+
+[[package]]
 name = "soupsieve"
 version = "2.6"
 description = "A modern CSS selector implementation for Beautiful Soup."
@@ -3084,4 +3098,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "feb23369528ac7e61771bd62c1347b6c7dc346a2fbb9273d0fc280438de7d2f0"
+content-hash = "287254f1c50e1d6aca430b2e08f0a6ead4f2643bf1a26690441e27a2ca02d37d"
