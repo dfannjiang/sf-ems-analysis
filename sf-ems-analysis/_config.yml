@@ -34,6 +34,6 @@ html:
 exclude_patterns:
   - raw_data_analysis/*
 
-sphinx:
-  config:
-    suppress_warnings: ["mystnb.unknown_mime_type"]
+html:
+  extra_scripts:
+    - https://cdn.plot.ly/plotly-latest.min.js
