@@ -35,3 +35,7 @@ exclude_patterns:
   - raw_data_analysis/*
 
 jupyter_execute_notebooks: "off"
+
+sphinx:
+  config:
+    suppress_warnings: ["mystnb.unknown_mime_type"]
