@@ -1,0 +1,103 @@
+Traceback (most recent call last):
+  File "/Users/domfj/Library/Caches/pypoetry/virtualenvs/sf-ff-service-KkBImDKy-py3.11/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Users/domfj/Library/Caches/pypoetry/virtualenvs/sf-ff-service-KkBImDKy-py3.11/lib/python3.11/site-packages/nbclient/client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/domfj/Library/Caches/pypoetry/virtualenvs/sf-ff-service-KkBImDKy-py3.11/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/domfj/Library/Caches/pypoetry/virtualenvs/sf-ff-service-KkBImDKy-py3.11/lib/python3.11/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/Users/domfj/Library/Caches/pypoetry/virtualenvs/sf-ff-service-KkBImDKy-py3.11/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/domfj/Library/Caches/pypoetry/virtualenvs/sf-ff-service-KkBImDKy-py3.11/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+tmp = medic_sorted.sample(frac=0.2, random_state=0)
+sns.jointplot(tmp[(tmp.prev_rest_min < 2500) & (tmp.prev_rest_min > -50)],
+            x='prev_rest_min', y='received_to_dispatch_perc', hue='prev_has_transport',
+             kind='kde')
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mKeyboardInterrupt[0m                         Traceback (most recent call last)
+Cell [0;32mIn[35], line 2[0m
+[1;32m      1[0m tmp [38;5;241m=[39m medic_sorted[38;5;241m.[39msample(frac[38;5;241m=[39m[38;5;241m0.2[39m, random_state[38;5;241m=[39m[38;5;241m0[39m)
+[0;32m----> 2[0m [43msns[49m[38;5;241;43m.[39;49m[43mjointplot[49m[43m([49m[43mtmp[49m[43m[[49m[43m([49m[43mtmp[49m[38;5;241;43m.[39;49m[43mprev_rest_min[49m[43m [49m[38;5;241;43m<[39;49m[43m [49m[38;5;241;43m2500[39;49m[43m)[49m[43m [49m[38;5;241;43m&[39;49m[43m [49m[43m([49m[43mtmp[49m[38;5;241;43m.[39;49m[43mprev_rest_min[49m[43m [49m[38;5;241;43m>[39;49m[43m [49m[38;5;241;43m-[39;49m[38;5;241;43m50[39;49m[43m)[49m[43m][49m[43m,[49m
+[1;32m      3[0m [43m            [49m[43mx[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43mprev_rest_min[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[43my[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43mreceived_to_dispatch_perc[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[43mhue[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43mprev_has_transport[39;49m[38;5;124;43m'[39;49m[43m,[49m
+[1;32m      4[0m [43m             [49m[43mkind[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43mkde[39;49m[38;5;124;43m'[39;49m[43m)[49m
+
+File [0;32m~/Library/Caches/pypoetry/virtualenvs/sf-ff-service-KkBImDKy-py3.11/lib/python3.11/site-packages/seaborn/axisgrid.py:2297[0m, in [0;36mjointplot[0;34m(data, x, y, hue, kind, height, ratio, space, dropna, xlim, ylim, color, palette, hue_order, hue_norm, marginal_ticks, joint_kws, marginal_kws, **kwargs)[0m
+[1;32m   2295[0m joint_kws[38;5;241m.[39msetdefault([38;5;124m"[39m[38;5;124mcolor[39m[38;5;124m"[39m, color)
+[1;32m   2296[0m joint_kws[38;5;241m.[39msetdefault([38;5;124m"[39m[38;5;124mwarn_singular[39m[38;5;124m"[39m, [38;5;28;01mFalse[39;00m)
+[0;32m-> 2297[0m [43mgrid[49m[38;5;241;43m.[39;49m[43mplot_joint[49m[43m([49m[43mkdeplot[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mjoint_kws[49m[43m)[49m
+[1;32m   2299[0m marginal_kws[38;5;241m.[39msetdefault([38;5;124m"[39m[38;5;124mcolor[39m[38;5;124m"[39m, color)
+[1;32m   2300[0m [38;5;28;01mif[39;00m [38;5;124m"[39m[38;5;124mfill[39m[38;5;124m"[39m [38;5;129;01min[39;00m joint_kws:
+
+File [0;32m~/Library/Caches/pypoetry/virtualenvs/sf-ff-service-KkBImDKy-py3.11/lib/python3.11/site-packages/seaborn/axisgrid.py:1832[0m, in [0;36mJointGrid.plot_joint[0;34m(self, func, **kwargs)[0m
+[1;32m   1829[0m     [38;5;28mself[39m[38;5;241m.[39m_inject_kwargs(func, kwargs, [38;5;28mself[39m[38;5;241m.[39m_hue_params)
+[1;32m   1831[0m [38;5;28;01mif[39;00m [38;5;28mstr[39m(func[38;5;241m.[39m[38;5;18m__module__[39m)[38;5;241m.[39mstartswith([38;5;124m"[39m[38;5;124mseaborn[39m[38;5;124m"[39m):
+[0;32m-> 1832[0m     [43mfunc[49m[43m([49m[43mx[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mx[49m[43m,[49m[43m [49m[43my[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43my[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+[1;32m   1833[0m [38;5;28;01melse[39;00m:
+[1;32m   1834[0m     func([38;5;28mself[39m[38;5;241m.[39mx, [38;5;28mself[39m[38;5;241m.[39my, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+
+File [0;32m~/Library/Caches/pypoetry/virtualenvs/sf-ff-service-KkBImDKy-py3.11/lib/python3.11/site-packages/seaborn/distributions.py:1715[0m, in [0;36mkdeplot[0;34m(data, x, y, hue, weights, palette, hue_order, hue_norm, color, fill, multiple, common_norm, common_grid, cumulative, bw_method, bw_adjust, warn_singular, log_scale, levels, thresh, gridsize, cut, clip, legend, cbar, cbar_ax, cbar_kws, ax, **kwargs)[0m
+[1;32m   1701[0m     p[38;5;241m.[39mplot_univariate_density(
+[1;32m   1702[0m         multiple[38;5;241m=[39mmultiple,
+[1;32m   1703[0m         common_norm[38;5;241m=[39mcommon_norm,
+[0;32m   (...)[0m
+[1;32m   1710[0m         [38;5;241m*[39m[38;5;241m*[39mplot_kws,
+[1;32m   1711[0m     )
+[1;32m   1713[0m [38;5;28;01melse[39;00m:
+[0;32m-> 1715[0m     [43mp[49m[38;5;241;43m.[39;49m[43mplot_bivariate_density[49m[43m([49m
+[1;32m   1716[0m [43m        [49m[43mcommon_norm[49m[38;5;241;43m=[39;49m[43mcommon_norm[49m[43m,[49m
+[1;32m   1717[0m [43m        [49m[43mfill[49m[38;5;241;43m=[39;49m[43mfill[49m[43m,[49m
+[1;32m   1718[0m [43m        [49m[43mlevels[49m[38;5;241;43m=[39;49m[43mlevels[49m[43m,[49m
+[1;32m   1719[0m [43m        [49m[43mthresh[49m[38;5;241;43m=[39;49m[43mthresh[49m[43m,[49m
+[1;32m   1720[0m [43m        [49m[43mlegend[49m[38;5;241;43m=[39;49m[43mlegend[49m[43m,[49m
+[1;32m   1721[0m [43m        [49m[43mcolor[49m[38;5;241;43m=[39;49m[43mcolor[49m[43m,[49m
+[1;32m   1722[0m [43m        [49m[43mwarn_singular[49m[38;5;241;43m=[39;49m[43mwarn_singular[49m[43m,[49m
+[1;32m   1723[0m [43m        [49m[43mcbar[49m[38;5;241;43m=[39;49m[43mcbar[49m[43m,[49m
+[1;32m   1724[0m [43m        [49m[43mcbar_ax[49m[38;5;241;43m=[39;49m[43mcbar_ax[49m[43m,[49m
+[1;32m   1725[0m [43m        [49m[43mcbar_kws[49m[38;5;241;43m=[39;49m[43mcbar_kws[49m[43m,[49m
+[1;32m   1726[0m [43m        [49m[43mestimate_kws[49m[38;5;241;43m=[39;49m[43mestimate_kws[49m[43m,[49m
+[1;32m   1727[0m [43m        [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m,[49m
+[1;32m   1728[0m [43m    [49m[43m)[49m
+[1;32m   1730[0m [38;5;28;01mreturn[39;00m ax
+
+File [0;32m~/Library/Caches/pypoetry/virtualenvs/sf-ff-service-KkBImDKy-py3.11/lib/python3.11/site-packages/seaborn/distributions.py:1073[0m, in [0;36m_DistributionPlotter.plot_bivariate_density[0;34m(self, common_norm, fill, levels, thresh, color, legend, cbar, warn_singular, cbar_ax, cbar_kws, estimate_kws, **contour_kws)[0m
+[1;32m   1071[0m [38;5;28;01mtry[39;00m:
+[1;32m   1072[0m     [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m singular:
+[0;32m-> 1073[0m         density, support [38;5;241m=[39m [43mestimator[49m[43m([49m[38;5;241;43m*[39;49m[43mobservations[49m[43m,[49m[43m [49m[43mweights[49m[38;5;241;43m=[39;49m[43mweights[49m[43m)[49m
+[1;32m   1074[0m [38;5;28;01mexcept[39;00m np[38;5;241m.[39mlinalg[38;5;241m.[39mLinAlgError:
+[1;32m   1075[0m     [38;5;66;03m# Testing for 0 variance doesn't catch all cases where scipy raises,[39;00m
+[1;32m   1076[0m     [38;5;66;03m# but we can also get a ValueError, so we need this convoluted approach[39;00m
+[1;32m   1077[0m     singular [38;5;241m=[39m [38;5;28;01mTrue[39;00m
+
+File [0;32m~/Library/Caches/pypoetry/virtualenvs/sf-ff-service-KkBImDKy-py3.11/lib/python3.11/site-packages/seaborn/_statistics.py:195[0m, in [0;36mKDE.__call__[0;34m(self, x1, x2, weights)[0m
+[1;32m    193[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_eval_univariate(x1, weights)
+[1;32m    194[0m [38;5;28;01melse[39;00m:
+[0;32m--> 195[0m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_eval_bivariate[49m[43m([49m[43mx1[49m[43m,[49m[43m [49m[43mx2[49m[43m,[49m[43m [49m[43mweights[49m[43m)[49m
+
+File [0;32m~/Library/Caches/pypoetry/virtualenvs/sf-ff-service-KkBImDKy-py3.11/lib/python3.11/site-packages/seaborn/_statistics.py:186[0m, in [0;36mKDE._eval_bivariate[0;34m(self, x1, x2, weights)[0m
+[1;32m    183[0m [38;5;28;01melse[39;00m:
+[1;32m    185[0m     xx1, xx2 [38;5;241m=[39m np[38;5;241m.[39mmeshgrid([38;5;241m*[39msupport)
+[0;32m--> 186[0m     density [38;5;241m=[39m [43mkde[49m[43m([49m[43m[[49m[43mxx1[49m[38;5;241;43m.[39;49m[43mravel[49m[43m([49m[43m)[49m[43m,[49m[43m [49m[43mxx2[49m[38;5;241;43m.[39;49m[43mravel[49m[43m([49m[43m)[49m[43m][49m[43m)[49m[38;5;241m.[39mreshape(xx1[38;5;241m.[39mshape)
+[1;32m    188[0m [38;5;28;01mreturn[39;00m density, support
+
+File [0;32m~/Library/Caches/pypoetry/virtualenvs/sf-ff-service-KkBImDKy-py3.11/lib/python3.11/site-packages/scipy/stats/_kde.py:268[0m, in [0;36mgaussian_kde.evaluate[0;34m(self, points)[0m
+[1;32m    265[0m         [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(msg)
+[1;32m    267[0m output_dtype, spec [38;5;241m=[39m _get_output_dtype([38;5;28mself[39m[38;5;241m.[39mcovariance, points)
+[0;32m--> 268[0m result [38;5;241m=[39m [43mgaussian_kernel_estimate[49m[43m[[49m[43mspec[49m[43m][49m[43m([49m
+[1;32m    269[0m [43m    [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mdataset[49m[38;5;241;43m.[39;49m[43mT[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mweights[49m[43m[[49m[43m:[49m[43m,[49m[43m [49m[38;5;28;43;01mNone[39;49;00m[43m][49m[43m,[49m
+[1;32m    270[0m [43m    [49m[43mpoints[49m[38;5;241;43m.[39;49m[43mT[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mcho_cov[49m[43m,[49m[43m [49m[43moutput_dtype[49m[43m)[49m
+[1;32m    272[0m [38;5;28;01mreturn[39;00m result[:, [38;5;241m0[39m]
+
+[0;31mKeyboardInterrupt[0m: 
+

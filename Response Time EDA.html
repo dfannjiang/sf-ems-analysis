@@ -1,0 +1,2195 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Motivation &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Response Time EDA';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="test.html">Test</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FResponse Time EDA.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Response Time EDA.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Motivation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Motivation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#key-insights">Key Insights</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#recommendations">Recommendations</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of contents</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-sources">Data sources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#call-duration-breakdown">Call duration breakdown</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-geographies-for-responding">Exploring geographies for responding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-dispatching">Exploring dispatching</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-intro-cleaning">Data intro / cleaning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#high-level">high level</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#investgating-diversions">investgating diversions</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="motivation">
+<h1>Motivation<a class="headerlink" href="#motivation" title="Link to this heading">#</a></h1>
+<p>Main purpose: understand how well SF’s 911 medical call response system is performing and see where it can be improved.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="key-insights">
+<h1>Key Insights<a class="headerlink" href="#key-insights" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>received_to_onscene: %64.83 within 10 (code 3)</p></li>
+<li><p>received_to_onscene: %70.69 within 20 (code 2)</p></li>
+<li><p>Time to onscene: roughly 80% of time is between responding to on scene.</p></li>
+<li><p>20% getting actually dispatching</p></li>
+<li><p>Outer regions have a slightly longer total response time, statistically significant</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="recommendations">
+<h1>Recommendations<a class="headerlink" href="#recommendations" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Investigate how ambulances are being dispatched: are they taking optimal routes? What are the biggest blockers to them getting to the scene?</p></li>
+<li><p>Investigte what takes so long for available units to be dispatched once a call is received. Is there good communication between DEM and SFFD?</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="table-of-contents">
+<h1>Table of contents<a class="headerlink" href="#table-of-contents" title="Link to this heading">#</a></h1>
+<section id="background">
+<h2>Background<a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
+<p>The life cycle of a 911 call:
+<em><a class="reference external" href="https://www.sf.gov/data/ambulance-response-life-threatening-emergencies">source</a></em></p>
+<p>According to the <a class="reference external" href="https://www.sf.gov/sites/default/files/2023-12/FY23APRfinal.pdf">2023 SF Annual Performance report</a>, SFFD responds to 80-90% of 911 calls requiring an ambulance, and their goal is respond in under 10 minutes for code 3 calls (life-threatening) and under 20 minutes for code 2 calls (non-life-threatening). Their definition of their response time is the “Roll/Response” time (see above, <a class="reference external" href="https://www.sf.gov/data/ambulance-response-life-threatening-emergencies">source</a>), which is only a portion of the lifecycle of a 911 call. <strong>However, if I’m the caller, I ultimately care about the entire duration between initating the call and when an ambulance arrives - the “Call Duration” time (see above)</strong>. This is the metric that I analyze in this project.</p>
+</section>
+<section id="data-sources">
+<h2>Data sources<a class="headerlink" href="#data-sources" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://data.sfgov.org/Public-Safety/Fire-Department-and-Emergency-Medical-Services-Dis/nuek-vuh3/about_data">SFFD and EMS Dispatched Calls for Service</a></p>
+<p><a class="reference external" href="https://data.sfgov.org/-/Analysis-Neighborhoods/j2bu-swwd/about_data">Analysis neighborhoods</a></p>
+<p><a class="reference external" href="https://sf-fire.org/fire-stations">SFFD fire stations</a></p>
+<p><a class="reference external" href="https://data.sfgov.org/Health-and-Social-Services/Hospital-Diversions/t4sf-777q/about_data">Hospital Diversions</a></p>
+</section>
+<section id="call-duration-breakdown">
+<h2>Call duration breakdown<a class="headerlink" href="#call-duration-breakdown" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>show joint plots</p></li>
+<li><p>plots by hour of day, day of week</p></li>
+</ul>
+</section>
+<section id="exploring-geographies-for-responding">
+<h2>Exploring geographies for responding<a class="headerlink" href="#exploring-geographies-for-responding" title="Link to this heading">#</a></h2>
+</section>
+<section id="exploring-dispatching">
+<h2>Exploring dispatching<a class="headerlink" href="#exploring-dispatching" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>most aren’t late</p></li>
+<li><p>diversions aren’t an issue (seemingly)</p></li>
+</ul>
+</section>
+<section id="data-intro-cleaning">
+<h2>Data intro / cleaning<a class="headerlink" href="#data-intro-cleaning" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>show filters, and what percent of data this knocks out</p></li>
+<li><p>show calculation of dates, percentages</p></li>
+</ul>
+</section>
+<section id="high-level">
+<h2>high level<a class="headerlink" href="#high-level" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.io</span> <span class="k">as</span> <span class="nn">pio</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s1">&#39;plotly_mimetype&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="n">rcParams</span>
+<span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s1">&#39;raw_data_analysis/08122024-5yr.parquet&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;raw shape: </span><span class="si">{</span><span class="n">raw</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">raw</span><span class="p">[(</span><span class="n">raw</span><span class="o">.</span><span class="n">call_date</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span> <span class="o">&gt;=</span> <span class="mi">2021</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;2021 onwards shape: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>raw shape: (1626986, 34)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021 onwards shape: (1212862, 34)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;on_scene_hour&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">on_scene_dttm</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">hour</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;on_scene_day_of_week&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">on_scene_dttm</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">dayofweek</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="k">def</span> <span class="nf">add_norm_lat_long</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">lats</span><span class="p">,</span> <span class="n">longs</span><span class="p">,</span> <span class="n">slats</span><span class="p">,</span> <span class="n">slongs</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">coord</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">case_location</span><span class="o">.</span><span class="n">values</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">coord</span> <span class="ow">and</span> <span class="s1">&#39;coordinates&#39;</span> <span class="ow">in</span> <span class="n">coord</span><span class="p">:</span>
+            <span class="n">long</span><span class="p">,</span> <span class="n">lat</span> <span class="o">=</span> <span class="n">coord</span><span class="p">[</span><span class="s1">&#39;coordinates&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">coord</span><span class="p">[</span><span class="s1">&#39;coordinates&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">slongs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">long</span><span class="p">)</span>
+            <span class="n">slats</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lat</span><span class="p">)</span>
+            <span class="n">longs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">long</span><span class="p">))</span>
+            <span class="n">lats</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">lat</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">slongs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+            <span class="n">slats</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+            <span class="n">longs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">NA</span><span class="p">)</span>
+            <span class="n">lats</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">NA</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">lats</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;long&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">longs</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;slat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">slats</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;slong&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">slongs</span>
+    
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">lat</span><span class="o">.</span><span class="n">notnull</span><span class="p">()</span> <span class="o">&amp;</span> <span class="n">df</span><span class="o">.</span><span class="n">long</span><span class="o">.</span><span class="n">notnull</span><span class="p">()]</span>
+
+    <span class="n">lat_long_scalar</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+    <span class="n">norm_lat_long</span> <span class="o">=</span> <span class="n">lat_long_scalar</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;lat&#39;</span><span class="p">,</span> <span class="s1">&#39;long&#39;</span><span class="p">]])</span>
+    <span class="n">norm_lat_long_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">norm_lat_long</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;norm_lat&#39;</span><span class="p">,</span> <span class="s1">&#39;norm_long&#39;</span><span class="p">])</span>
+    <span class="n">norm_lat_long_df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span>
+    <span class="n">df_normed_lat_long</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span> <span class="n">norm_lat_long_df</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">lat_long_scalar</span><span class="p">,</span> <span class="n">df_normed_lat_long</span>
+
+<span class="n">lat_long_scalar</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="n">add_norm_lat_long</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">lat</span><span class="o">.</span><span class="n">notnull</span><span class="p">()</span> <span class="o">&amp;</span> <span class="n">df</span><span class="o">.</span><span class="n">long</span><span class="o">.</span><span class="n">notnull</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/h2/v02yh68x5vz3hbxw0mxbfpsw0000gn/T/ipykernel_83242/410091565.py:1: SettingWithCopyWarning:
+
+
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+/var/folders/h2/v02yh68x5vz3hbxw0mxbfpsw0000gn/T/ipykernel_83242/410091565.py:2: SettingWithCopyWarning:
+
+
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/h2/v02yh68x5vz3hbxw0mxbfpsw0000gn/T/ipykernel_83242/410091565.py:18: SettingWithCopyWarning:
+
+
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+/var/folders/h2/v02yh68x5vz3hbxw0mxbfpsw0000gn/T/ipykernel_83242/410091565.py:19: SettingWithCopyWarning:
+
+
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+/var/folders/h2/v02yh68x5vz3hbxw0mxbfpsw0000gn/T/ipykernel_83242/410091565.py:20: SettingWithCopyWarning:
+
+
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/h2/v02yh68x5vz3hbxw0mxbfpsw0000gn/T/ipykernel_83242/410091565.py:21: SettingWithCopyWarning:
+
+
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">unit_type</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>unit_type
+ENGINE            0.317043
+MEDIC             0.304962
+TRUCK             0.096494
+PRIVATE           0.081911
+CHIEF             0.071156
+SUPPORT           0.044188
+RESCUE CAPTAIN    0.036955
+CP                0.025088
+RESCUE SQUAD      0.013243
+BLS               0.007993
+INVESTIGATION     0.000877
+AIRPORT           0.000089
+Name: proportion, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;received_to_dispatch&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">dispatch_dttm</span> <span class="o">-</span> <span class="n">df</span><span class="o">.</span><span class="n">received_dttm</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span> <span class="o">/</span> <span class="mi">60</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;dispatch_to_response&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">response_dttm</span> <span class="o">-</span> <span class="n">df</span><span class="o">.</span><span class="n">dispatch_dttm</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span> <span class="o">/</span> <span class="mi">60</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;response_to_onscene&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">on_scene_dttm</span> <span class="o">-</span> <span class="n">df</span><span class="o">.</span><span class="n">response_dttm</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span> <span class="o">/</span> <span class="mi">60</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;received_to_onscene&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">on_scene_dttm</span> <span class="o">-</span> <span class="n">df</span><span class="o">.</span><span class="n">received_dttm</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span> <span class="o">/</span> <span class="mi">60</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">received_to_dispatch</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">dispatch_to_response</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">response_to_onscene</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(961275, 46)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">tmp</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">unit_type</span> <span class="o">==</span> <span class="s1">&#39;MEDIC&#39;</span><span class="p">]</span>
+<span class="n">tmp</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tmp</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;incident_number&#39;</span><span class="p">)[</span><span class="s1">&#39;dispatch_dttm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()]</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;received_to_onscene&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;final_priority&#39;</span><span class="p">,</span> <span class="n">hue_order</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">],</span> <span class="n">showfliers</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Retrieve the lines that make up the boxplot</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="c1"># Get the whiskers and box information</span>
+    <span class="c1"># Lines are ordered as: whisker_min, whisker_max, box_min, median, box_max</span>
+    <span class="n">whisker_low</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">get_ydata</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">whisker_high</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">get_ydata</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">q1</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">get_ydata</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">median</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">get_ydata</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">q3</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">get_ydata</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="c1"># Get the center position for the label</span>
+    <span class="n">x_value</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">get_xdata</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+    <span class="c1"># Label each part with its value</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x_value</span><span class="p">,</span> <span class="n">median</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">median</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x_value</span><span class="p">,</span> <span class="n">q1</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">q1</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x_value</span><span class="p">,</span> <span class="n">q3</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">q3</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x_value</span><span class="p">,</span> <span class="n">whisker_low</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">whisker_low</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x_value</span><span class="p">,</span> <span class="n">whisker_high</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">whisker_high</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># Show the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Time until first ambulance arrival (minutes)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Minutes&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1e8c31c08ad5195b80509fe5f8bcc24191a913f73b10d772c8e2fcd7bc9652e6.png" src="_images/1e8c31c08ad5195b80509fe5f8bcc24191a913f73b10d772c8e2fcd7bc9652e6.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tmp</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">unit_type</span> <span class="o">==</span> <span class="s1">&#39;MEDIC&#39;</span><span class="p">]</span>
+<span class="n">tmp</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tmp</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;incident_number&#39;</span><span class="p">)[</span><span class="s1">&#39;dispatch_dttm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()]</span>
+<span class="n">medic</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[(</span><span class="n">tmp</span><span class="o">.</span><span class="n">received_to_onscene</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">tmp</span><span class="o">.</span><span class="n">received_to_onscene</span> <span class="o">&lt;</span> <span class="mi">120</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">% d</span><span class="s1">ata filtered: </span><span class="si">{0:.2f}</span><span class="s1">%&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">medic</span><span class="p">)</span> <span class="o">*</span><span class="mi">100</span><span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">unit_type</span> <span class="o">==</span> <span class="s1">&#39;MEDIC&#39;</span><span class="p">])))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">medic</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">medic</span><span class="o">.</span><span class="n">unit_id</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>% data filtered: 54.91%
+(172156, 46)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>104
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">medic</span><span class="o">.</span><span class="n">final_priority</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>final_priority
+2    0.665193
+3    0.334807
+Name: proportion, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">medic</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;received_to_onscene&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;final_priority&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Raw on scene duration&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">medic</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;received_to_onscene&#39;</span><span class="p">,</span> <span class="n">log_scale</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;final_priority&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;log(on scene duration)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;log(on scene duration)&#39;)
+</pre></div>
+</div>
+<img alt="_images/4cb576725b71035f8d3874f63637dd162e65924e50e5cd70bcaea935fa0542fd.png" src="_images/4cb576725b71035f8d3874f63637dd162e65924e50e5cd70bcaea935fa0542fd.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">medic</span><span class="p">[</span><span class="s1">&#39;received_to_dispatch_perc&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">medic</span><span class="o">.</span><span class="n">received_to_dispatch</span> <span class="o">/</span> <span class="n">medic</span><span class="o">.</span><span class="n">received_to_onscene</span>
+<span class="n">medic</span><span class="p">[</span><span class="s1">&#39;dispatch_to_response_perc&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">medic</span><span class="o">.</span><span class="n">dispatch_to_response</span> <span class="o">/</span> <span class="n">medic</span><span class="o">.</span><span class="n">received_to_onscene</span>
+<span class="n">medic</span><span class="p">[</span><span class="s1">&#39;response_to_onscene_perc&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">medic</span><span class="o">.</span><span class="n">response_to_onscene</span> <span class="o">/</span> <span class="n">medic</span><span class="o">.</span><span class="n">received_to_onscene</span>
+<span class="n">medic</span><span class="p">[</span><span class="s1">&#39;received_to_dispatch_log&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">medic</span><span class="o">.</span><span class="n">received_to_dispatch</span><span class="p">)</span>
+<span class="n">medic</span><span class="p">[</span><span class="s1">&#39;dispatch_to_response_log&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">medic</span><span class="o">.</span><span class="n">dispatch_to_response</span><span class="p">)</span>
+<span class="n">medic</span><span class="p">[</span><span class="s1">&#39;response_to_onscene_log&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">medic</span><span class="o">.</span><span class="n">response_to_onscene</span><span class="p">)</span>
+<span class="n">medic</span><span class="p">[</span><span class="s1">&#39;received_to_onscene_log&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">medic</span><span class="o">.</span><span class="n">received_to_onscene</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/h2/v02yh68x5vz3hbxw0mxbfpsw0000gn/T/ipykernel_83242/642784944.py:2: SettingWithCopyWarning:
+
+
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+/var/folders/h2/v02yh68x5vz3hbxw0mxbfpsw0000gn/T/ipykernel_83242/642784944.py:3: SettingWithCopyWarning:
+
+
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+/var/folders/h2/v02yh68x5vz3hbxw0mxbfpsw0000gn/T/ipykernel_83242/642784944.py:4: SettingWithCopyWarning:
+
+
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+/Users/domfj/Library/Caches/pypoetry/virtualenvs/sf-ff-service-KkBImDKy-py3.11/lib/python3.11/site-packages/pandas/core/arraylike.py:399: RuntimeWarning:
+
+divide by zero encountered in log
+
+/var/folders/h2/v02yh68x5vz3hbxw0mxbfpsw0000gn/T/ipykernel_83242/642784944.py:5: SettingWithCopyWarning:
+
+
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+/Users/domfj/Library/Caches/pypoetry/virtualenvs/sf-ff-service-KkBImDKy-py3.11/lib/python3.11/site-packages/pandas/core/arraylike.py:399: RuntimeWarning:
+
+divide by zero encountered in log
+
+/var/folders/h2/v02yh68x5vz3hbxw0mxbfpsw0000gn/T/ipykernel_83242/642784944.py:6: SettingWithCopyWarning:
+
+
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+/Users/domfj/Library/Caches/pypoetry/virtualenvs/sf-ff-service-KkBImDKy-py3.11/lib/python3.11/site-packages/pandas/core/arraylike.py:399: RuntimeWarning:
+
+divide by zero encountered in log
+
+/var/folders/h2/v02yh68x5vz3hbxw0mxbfpsw0000gn/T/ipykernel_83242/642784944.py:7: SettingWithCopyWarning:
+
+
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+/var/folders/h2/v02yh68x5vz3hbxw0mxbfpsw0000gn/T/ipykernel_83242/642784944.py:8: SettingWithCopyWarning:
+
+
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;received_hour&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">received_dttm</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">hour</span>
+<span class="n">medic</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;received_hour&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">medic</span><span class="o">.</span><span class="n">received_dttm</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">hour</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;received_day_of_week&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">received_dttm</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">dayofweek</span>
+<span class="n">medic</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;received_day_of_week&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">medic</span><span class="o">.</span><span class="n">received_dttm</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">dayofweek</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/h2/v02yh68x5vz3hbxw0mxbfpsw0000gn/T/ipykernel_83242/4013571862.py:2: SettingWithCopyWarning:
+
+
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+/var/folders/h2/v02yh68x5vz3hbxw0mxbfpsw0000gn/T/ipykernel_83242/4013571862.py:4: SettingWithCopyWarning:
+
+
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">medic_onscene_hr</span> <span class="o">=</span> <span class="n">medic</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;received_hour&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">received_to_onscene</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">tmp</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;call_number&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">received_hour</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">df_call_count</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;received_hour&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">to_frame</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="c1"># Plot the first line plot</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;received_hour&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;received_to_onscene&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">medic_onscene_hr</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span>
+             <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Mean response duration&#39;</span><span class="p">)</span>
+
+<span class="c1"># Create a second y-axis with twinx</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+
+<span class="c1"># Plot the second line plot on the second y-axis</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;received_hour&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_call_count</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;# calls received&#39;</span><span class="p">)</span>
+
+<span class="n">lines_1</span><span class="p">,</span> <span class="n">labels_1</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">get_legend_handles_labels</span><span class="p">()</span>
+<span class="n">lines_2</span><span class="p">,</span> <span class="n">labels_2</span> <span class="o">=</span> <span class="n">ax2</span><span class="o">.</span><span class="n">get_legend_handles_labels</span><span class="p">()</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">lines_1</span> <span class="o">+</span> <span class="n">lines_2</span><span class="p">,</span> <span class="n">labels_1</span> <span class="o">+</span> <span class="n">labels_2</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">get_legend</span><span class="p">()</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+<span class="c1"># Add labels for both y-axes</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Ambulance response duration (min)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;# calls received&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Hour that call was received&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Calls received and response times by hour of day&#39;</span><span class="p">)</span>
+<span class="c1"># Show the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a9618a738a4ad4d8ba46b1a06dd458c0e54ff9fb127fbacbd66f34bf5e0ecaa2.png" src="_images/a9618a738a4ad4d8ba46b1a06dd458c0e54ff9fb127fbacbd66f34bf5e0ecaa2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">medic_onscene_day</span> <span class="o">=</span> <span class="n">medic</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;received_day_of_week&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">received_to_onscene</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">tmp</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;call_number&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">received_day_of_week</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">df_call_count</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;received_day_of_week&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">to_frame</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="c1"># Plot the first line plot</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;received_day_of_week&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;received_to_onscene&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">medic_onscene_day</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span>
+             <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Mean response duration&#39;</span><span class="p">)</span>
+
+<span class="c1"># Create a second y-axis with twinx</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+
+<span class="c1"># Plot the second line plot on the second y-axis</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;received_day_of_week&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_call_count</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;# calls received&#39;</span><span class="p">)</span>
+
+<span class="n">lines_1</span><span class="p">,</span> <span class="n">labels_1</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">get_legend_handles_labels</span><span class="p">()</span>
+<span class="n">lines_2</span><span class="p">,</span> <span class="n">labels_2</span> <span class="o">=</span> <span class="n">ax2</span><span class="o">.</span><span class="n">get_legend_handles_labels</span><span class="p">()</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">lines_1</span> <span class="o">+</span> <span class="n">lines_2</span><span class="p">,</span> <span class="n">labels_1</span> <span class="o">+</span> <span class="n">labels_2</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">get_legend</span><span class="p">()</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+<span class="c1"># Add labels for both y-axes</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Ambulance response duration (min)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;# calls received&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Day of week&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="s1">&#39;unused&#39;</span><span class="p">,</span><span class="s1">&#39;Monday&#39;</span><span class="p">,</span> <span class="s1">&#39;Tuesday&#39;</span><span class="p">,</span> <span class="s1">&#39;Wednesday&#39;</span><span class="p">,</span> <span class="s1">&#39;Thursday&#39;</span><span class="p">,</span> <span class="s1">&#39;Friday&#39;</span><span class="p">,</span> <span class="s1">&#39;Saturday&#39;</span><span class="p">,</span> <span class="s1">&#39;Sunday&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Calls received and response times by day of week&#39;</span><span class="p">)</span>
+<span class="c1"># Show the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/h2/v02yh68x5vz3hbxw0mxbfpsw0000gn/T/ipykernel_83242/1186794475.py:26: UserWarning:
+
+set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+</pre></div>
+</div>
+<img alt="_images/907d94dd5662d350880c4e74e3f47fa4ede5d525b1ddacfd5175764de6d10c57.png" src="_images/907d94dd5662d350880c4e74e3f47fa4ede5d525b1ddacfd5175764de6d10c57.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">medic</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+            <span class="n">x</span><span class="o">=</span><span class="s1">&#39;received_to_dispatch_perc&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;received_to_onscene_log&#39;</span><span class="p">,</span>
+           <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;final_priority&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;kde&quot;</span><span class="p">,</span> <span class="n">hue_order</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">]);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">% d</span><span class="s2">uration(received -&gt; dispatch) vs log(response duration)&quot;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;% time spent to dispatch&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;log (response duration)&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/299f06197fb63c811df0dbf9d585a7c7ba80b195ab72b17b23a70186e360e227.png" src="_images/299f06197fb63c811df0dbf9d585a7c7ba80b195ab72b17b23a70186e360e227.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">medic</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+            <span class="n">x</span><span class="o">=</span><span class="s1">&#39;dispatch_to_response_perc&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;received_to_onscene_log&#39;</span><span class="p">,</span>
+           <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;final_priority&#39;</span><span class="p">,</span> <span class="n">hue_order</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">]);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">% d</span><span class="s2">uration(dispatch -&gt; response) vs log(response duration)&quot;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">% d</span><span class="s1">uration(dispatch -&gt; response)&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;log (response duration)&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/16a7809334b57cabd891dc908402a0b24c453df6a371a0ed722fee9c211820ec.png" src="_images/16a7809334b57cabd891dc908402a0b24c453df6a371a0ed722fee9c211820ec.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">medic</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+            <span class="n">x</span><span class="o">=</span><span class="s1">&#39;response_to_onscene_perc&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;received_to_onscene_log&#39;</span><span class="p">,</span>
+           <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;final_priority&#39;</span><span class="p">,</span> <span class="n">hue_order</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">]);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">% d</span><span class="s2">uration(response -&gt; on scene) vs log(response duration)&quot;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">% d</span><span class="s1">uration(response -&gt; onscene)&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;log (response duration)&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/68b19f0c79217bff6c4fa1b7d6a29ab59a4ea9f49aacbd8d66f010819fa87e68.png" src="_images/68b19f0c79217bff6c4fa1b7d6a29ab59a4ea9f49aacbd8d66f010819fa87e68.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">medic_sorted</span> <span class="o">=</span> <span class="n">medic</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;received_dttm&#39;</span><span class="p">)</span>
+<span class="n">medic_sorted</span><span class="p">[</span><span class="s1">&#39;prev_avail&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="k">for</span> <span class="n">unit_id</span> <span class="ow">in</span> <span class="n">medic_sorted</span><span class="o">.</span><span class="n">unit_id</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+    <span class="n">unit_filter</span> <span class="o">=</span> <span class="n">medic_sorted</span><span class="o">.</span><span class="n">unit_id</span> <span class="o">==</span> <span class="n">unit_id</span>
+    <span class="n">index_to_set</span> <span class="o">=</span> <span class="n">medic_sorted</span><span class="p">[</span><span class="n">unit_filter</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">index</span>
+    <span class="n">prev_avail</span> <span class="o">=</span> <span class="n">medic_sorted</span><span class="p">[</span><span class="n">unit_filter</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">available_dttm</span>
+    <span class="n">prev_avail</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">index_to_set</span>
+    <span class="n">medic_sorted</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">unit_filter</span><span class="p">,</span> <span class="s1">&#39;prev_avail&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">prev_avail</span>
+<span class="n">medic_sorted</span><span class="o">.</span><span class="n">prev_avail</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">medic_sorted</span><span class="o">.</span><span class="n">prev_avail</span><span class="p">)</span>
+<span class="n">medic_sorted</span><span class="p">[</span><span class="s1">&#39;prev_rest_min&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">medic_sorted</span><span class="o">.</span><span class="n">received_dttm</span> <span class="o">-</span> <span class="n">medic_sorted</span><span class="o">.</span><span class="n">prev_avail</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span> <span class="o">/</span> <span class="mi">60</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tmp</span> <span class="o">=</span> <span class="n">medic_sorted</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">tmp</span><span class="p">[(</span><span class="n">tmp</span><span class="o">.</span><span class="n">prev_rest_min</span> <span class="o">&lt;</span> <span class="mi">2500</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">tmp</span><span class="o">.</span><span class="n">prev_rest_min</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">50</span><span class="p">)],</span>
+            <span class="n">x</span><span class="o">=</span><span class="s1">&#39;prev_rest_min&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;received_to_dispatch_perc&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;final_priority&#39;</span><span class="p">,</span> <span class="n">hue_order</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">],</span>
+             <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.JointGrid at 0x2be528ad0&gt;
+</pre></div>
+</div>
+<img alt="_images/42ca4c0751cc960861791fc5cb0491aee192e4424c756f5d0df7bdcd4afac624.png" src="_images/42ca4c0751cc960861791fc5cb0491aee192e4424c756f5d0df7bdcd4afac624.png" />
+</div>
+</div>
+<p>Compare prev avail, see if long on scene duration time is an issue. Also worth looking into received to dispatch time? Else, try to locate problematic geographical areas to see if resource allocation is an issue. Also see how much of an improvement you need to improve KPI by.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">medic_sorted</span><span class="o">.</span><span class="n">prev_rest_min</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">medic_sorted</span><span class="p">)</span>
+<span class="n">medic_sorted</span><span class="p">[</span><span class="s1">&#39;avail_when_received&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">medic_sorted</span><span class="o">.</span><span class="n">prev_rest_min</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">medic_sorted</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;received_to_dispatch_perc&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;avail_when_received&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">% d</span><span class="s2">uration(received -&gt; dispatch) for busy and available ambulances&quot;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">% d</span><span class="s1">uration(received -&gt; dispatch)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d256133f6aa1e0ee7e5fe2cbd3347d78c9f4b8f254ca38063a522ad5fb10fe33.png" src="_images/d256133f6aa1e0ee7e5fe2cbd3347d78c9f4b8f254ca38063a522ad5fb10fe33.png" />
+</div>
+</div>
+<p>.01% of data is kinda messed up: prev available is greater than response dttm lmao. Anyhow, conclusion is that when you’re not available when received (8% of the time), time to dispatch perc mean greater by 50%, with 75th quartile twice as large.</p>
+<p>Also, so much outlier data for dispatch to received. maybe thats due to data error</p>
+<p>NOw its time to see if travel distance is worse for certain areas</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dedup_calls</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">condition</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">filtered</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">condition</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">filtered</span> <span class="o">=</span> <span class="n">data</span>
+    
+    <span class="n">filtered</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;slong&#39;</span><span class="p">,</span> <span class="s1">&#39;slat&#39;</span><span class="p">])</span>
+    
+    <span class="n">df</span> <span class="o">=</span> <span class="n">filtered</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;slong&#39;</span><span class="p">,</span> <span class="s1">&#39;slat&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+        <span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;long&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;norm_lat&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span><span class="s1">&#39;count&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;norm_long&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;received_to_onscene&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span>
+    <span class="p">})</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">col</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">]</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;norm_lat mean&#39;</span><span class="p">:</span> <span class="s1">&#39;norm_lat&#39;</span><span class="p">,</span> <span class="s1">&#39;norm_lat count&#39;</span><span class="p">:</span> <span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="s1">&#39;norm_long mean&#39;</span><span class="p">:</span> <span class="s1">&#39;norm_long&#39;</span><span class="p">,</span>
+                           <span class="s1">&#39;lat mean&#39;</span><span class="p">:</span> <span class="s1">&#39;lat&#39;</span><span class="p">,</span> <span class="s1">&#39;long mean&#39;</span><span class="p">:</span> <span class="s1">&#39;long&#39;</span><span class="p">,</span> <span class="s1">&#39;received_to_onscene mean&#39;</span><span class="p">:</span> <span class="s1">&#39;received_to_onscene&#39;</span><span class="p">})</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span> <span class="o">*=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;received_to_onscene&#39;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">cluster</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">dedup_calls</span><span class="p">(</span><span class="n">medic_sorted</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">km</span> <span class="o">=</span> <span class="n">cluster</span><span class="o">.</span><span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">preds</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">km</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">x</span><span class="p">[[</span><span class="s1">&#39;norm_lat&#39;</span><span class="p">,</span> <span class="s1">&#39;norm_long&#39;</span><span class="p">]],</span> <span class="n">sample_weight</span><span class="o">=</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]))</span><span class="o">.</span><span class="n">to_frame</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;cluster&#39;</span><span class="p">)</span>
+<span class="n">preds</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">index</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">preds</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;norm_long&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;norm_lat&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;cluster&#39;</span><span class="p">,</span> <span class="n">palette</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">&quot;hls&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">));</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">get_legend</span><span class="p">()</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(10237, 6)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/h2/v02yh68x5vz3hbxw0mxbfpsw0000gn/T/ipykernel_83242/2909112982.py:7: UserWarning:
+
+
+The palette list has fewer values (15) than needed (50) and will cycle, which may produce an uninterpretable plot.
+</pre></div>
+</div>
+<img alt="_images/c5062cd42608515440b3cfeb1c23d808b06d1566c7e203d0843f31208a6b7df4.png" src="_images/c5062cd42608515440b3cfeb1c23d808b06d1566c7e203d0843f31208a6b7df4.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">medic_sorted_clustered</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">medic_sorted</span><span class="p">,</span> <span class="n">preds</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;slong&#39;</span><span class="p">,</span> <span class="s1">&#39;slat&#39;</span><span class="p">])</span>
+<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">medic_sorted</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">medic_sorted_clustered</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">medic_sorted</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="n">medic_sorted_clustered</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cluster_metrics</span> <span class="o">=</span> <span class="n">medic_sorted_clustered</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;cluster&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">response_to_onscene</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">ordered_clusters</span> <span class="o">=</span> <span class="nb">list</span><span class="p">((</span><span class="n">cluster_metrics</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">medic_sorted_clustered</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;cluster&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;response_to_onscene&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;box&quot;</span><span class="p">,</span> <span class="n">log_scale</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+           <span class="n">height</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">ordered_clusters</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x2b72c9e50&gt;
+</pre></div>
+</div>
+<img alt="_images/47e4ad0fa4ae103d90a52e6ddd338e67bd33abd2f46e51566f2bd4c280915188.png" src="_images/47e4ad0fa4ae103d90a52e6ddd338e67bd33abd2f46e51566f2bd4c280915188.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">medic_sorted_clustered</span><span class="p">[</span><span class="n">medic_sorted_clustered</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">ordered_clusters</span><span class="p">[</span><span class="o">-</span><span class="mi">20</span><span class="p">:])],</span>
+               <span class="n">x</span><span class="o">=</span><span class="s1">&#39;norm_long&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;norm_lat&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;cluster&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/25ada4d266616747451dc74193ea67425dafe7a4fb4983a7828584cd7a639f83.png" src="_images/25ada4d266616747451dc74193ea67425dafe7a4fb4983a7828584cd7a639f83.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="n">nhoods</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;Analysis Neighborhoods.geojson&#39;</span><span class="p">)</span>
+<span class="n">stations</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;stations.csv&#39;</span><span class="p">)</span>
+<span class="n">hospitals</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;hospitals.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">DataSourceError</span><span class="g g-Whitespace">                           </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">26</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">nhoods</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;Analysis Neighborhoods.geojson&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">stations</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;stations.csv&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">hospitals</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;hospitals.csv&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~/Library/Caches/pypoetry/virtualenvs/sf-ff-service-KkBImDKy-py3.11/lib/python3.11/site-packages/geopandas/io/file.py:294,</span> in <span class="ni">_read_file</span><span class="nt">(filename, bbox, mask, columns, rows, engine, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">291</span>             <span class="n">from_bytes</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="g g-Whitespace">    </span><span class="mi">293</span> <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;pyogrio&quot;</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">294</span>     <span class="k">return</span> <span class="n">_read_file_pyogrio</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">295</span>         <span class="n">filename</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span> <span class="n">rows</span><span class="o">=</span><span class="n">rows</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+<span class="g g-Whitespace">    </span><span class="mi">296</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">298</span> <span class="k">elif</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;fiona&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">299</span>     <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">is_file_like</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+
+<span class="nn">File ~/Library/Caches/pypoetry/virtualenvs/sf-ff-service-KkBImDKy-py3.11/lib/python3.11/site-packages/geopandas/io/file.py:547,</span> in <span class="ni">_read_file_pyogrio</span><span class="nt">(path_or_bytes, bbox, mask, rows, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">538</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">539</span>         <span class="s2">&quot;The &#39;include_fields&#39; and &#39;ignore_fields&#39; keywords are deprecated, and &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">540</span>         <span class="s2">&quot;will be removed in a future release. You can use the &#39;columns&#39; keyword &quot;</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">543</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">544</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">545</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;columns&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;include_fields&quot;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">547</span> <span class="k">return</span> <span class="n">pyogrio</span><span class="o">.</span><span class="n">read_dataframe</span><span class="p">(</span><span class="n">path_or_bytes</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~/Library/Caches/pypoetry/virtualenvs/sf-ff-service-KkBImDKy-py3.11/lib/python3.11/site-packages/pyogrio/geopandas.py:265,</span> in <span class="ni">read_dataframe</span><span class="nt">(path_or_buffer, layer, encoding, columns, read_geometry, force_2d, skip_features, max_features, where, bbox, mask, fids, sql, sql_dialect, fid_as_index, use_arrow, on_invalid, arrow_to_pandas_kwargs, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">260</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">use_arrow</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">261</span>     <span class="c1"># For arrow, datetimes are read as is.</span>
+<span class="g g-Whitespace">    </span><span class="mi">262</span>     <span class="c1"># For numpy IO, datetimes are read as string values to preserve timezone info</span>
+<span class="g g-Whitespace">    </span><span class="mi">263</span>     <span class="c1"># as numpy does not directly support timezones.</span>
+<span class="g g-Whitespace">    </span><span class="mi">264</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;datetime_as_string&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="ne">--&gt; </span><span class="mi">265</span> <span class="n">result</span> <span class="o">=</span> <span class="n">read_func</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">266</span>     <span class="n">path_or_buffer</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">267</span>     <span class="n">layer</span><span class="o">=</span><span class="n">layer</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">268</span>     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span>     <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span>     <span class="n">read_geometry</span><span class="o">=</span><span class="n">read_geometry</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">271</span>     <span class="n">force_2d</span><span class="o">=</span><span class="n">gdal_force_2d</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">272</span>     <span class="n">skip_features</span><span class="o">=</span><span class="n">skip_features</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">273</span>     <span class="n">max_features</span><span class="o">=</span><span class="n">max_features</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">274</span>     <span class="n">where</span><span class="o">=</span><span class="n">where</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">275</span>     <span class="n">bbox</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">276</span>     <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">277</span>     <span class="n">fids</span><span class="o">=</span><span class="n">fids</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">278</span>     <span class="n">sql</span><span class="o">=</span><span class="n">sql</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">279</span>     <span class="n">sql_dialect</span><span class="o">=</span><span class="n">sql_dialect</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">280</span>     <span class="n">return_fids</span><span class="o">=</span><span class="n">fid_as_index</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">281</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">282</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">284</span> <span class="k">if</span> <span class="n">use_arrow</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">285</span>     <span class="n">meta</span><span class="p">,</span> <span class="n">table</span> <span class="o">=</span> <span class="n">result</span>
+
+<span class="nn">File ~/Library/Caches/pypoetry/virtualenvs/sf-ff-service-KkBImDKy-py3.11/lib/python3.11/site-packages/pyogrio/raw.py:198,</span> in <span class="ni">read</span><span class="nt">(path_or_buffer, layer, encoding, columns, read_geometry, force_2d, skip_features, max_features, where, bbox, mask, fids, sql, sql_dialect, return_fids, datetime_as_string, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">59</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Read OGR data source into numpy arrays.</span>
+<span class="g g-Whitespace">     </span><span class="mi">60</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">61</span><span class="sd"> IMPORTANT: non-linear geometry types (e.g., MultiSurface) are converted</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">194</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">195</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">196</span> <span class="n">dataset_kwargs</span> <span class="o">=</span> <span class="n">_preprocess_options_key_value</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">if</span> <span class="n">kwargs</span> <span class="k">else</span> <span class="p">{}</span>
+<span class="ne">--&gt; </span><span class="mi">198</span> <span class="k">return</span> <span class="n">ogr_read</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">199</span>     <span class="n">get_vsi_path_or_buffer</span><span class="p">(</span><span class="n">path_or_buffer</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">200</span>     <span class="n">layer</span><span class="o">=</span><span class="n">layer</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">201</span>     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">202</span>     <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">203</span>     <span class="n">read_geometry</span><span class="o">=</span><span class="n">read_geometry</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">204</span>     <span class="n">force_2d</span><span class="o">=</span><span class="n">force_2d</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">205</span>     <span class="n">skip_features</span><span class="o">=</span><span class="n">skip_features</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">206</span>     <span class="n">max_features</span><span class="o">=</span><span class="n">max_features</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">207</span>     <span class="n">where</span><span class="o">=</span><span class="n">where</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">208</span>     <span class="n">bbox</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">209</span>     <span class="n">mask</span><span class="o">=</span><span class="n">_mask_to_wkb</span><span class="p">(</span><span class="n">mask</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">210</span>     <span class="n">fids</span><span class="o">=</span><span class="n">fids</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">211</span>     <span class="n">sql</span><span class="o">=</span><span class="n">sql</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">212</span>     <span class="n">sql_dialect</span><span class="o">=</span><span class="n">sql_dialect</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span>     <span class="n">return_fids</span><span class="o">=</span><span class="n">return_fids</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span>     <span class="n">dataset_kwargs</span><span class="o">=</span><span class="n">dataset_kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">215</span>     <span class="n">datetime_as_string</span><span class="o">=</span><span class="n">datetime_as_string</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">216</span> <span class="p">)</span>
+
+<span class="nn">File pyogrio/_io.pyx:1240,</span> in <span class="ni">pyogrio._io.ogr_read</span><span class="nt">()</span>
+
+<span class="nn">File pyogrio/_io.pyx:220,</span> in <span class="ni">pyogrio._io.ogr_open</span><span class="nt">()</span>
+
+<span class="ne">DataSourceError</span>: Analysis Neighborhoods.geojson: No such file or directory
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">show_clusters_i</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">ordered_clusters</span><span class="p">):</span>
+
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># Function to generate new data dynamically</span>
+    <span class="k">def</span> <span class="nf">get_lats</span><span class="p">(</span><span class="n">cluster</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">sample</span><span class="p">[</span><span class="n">sample</span><span class="o">.</span><span class="n">cluster</span> <span class="o">==</span> <span class="n">cluster</span><span class="p">]</span><span class="o">.</span><span class="n">lat</span>
+
+    <span class="k">def</span> <span class="nf">get_longs</span><span class="p">(</span><span class="n">cluster</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">sample</span><span class="p">[</span><span class="n">sample</span><span class="o">.</span><span class="n">cluster</span> <span class="o">==</span> <span class="n">cluster</span><span class="p">]</span><span class="o">.</span><span class="n">long</span>
+
+    <span class="c1"># Create a separate trace for each cluster</span>
+    <span class="n">traces</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">max_clusters</span> <span class="o">=</span> <span class="mi">20</span>
+    <span class="k">for</span> <span class="n">cluster</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">ordered_clusters</span><span class="p">))[:</span><span class="n">max_clusters</span><span class="p">]:</span>
+        <span class="n">traces</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+            <span class="n">x</span><span class="o">=</span><span class="n">get_longs</span><span class="p">(</span><span class="n">cluster</span><span class="p">),</span> 
+            <span class="n">y</span><span class="o">=</span><span class="n">get_lats</span><span class="p">(</span><span class="n">cluster</span><span class="p">),</span> 
+            <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;markers&#39;</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Cluster </span><span class="si">{</span><span class="n">cluster</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+            <span class="n">visible</span><span class="o">=</span><span class="kc">False</span>  <span class="c1"># Initially, all traces are hidden</span>
+        <span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">trace</span> <span class="ow">in</span> <span class="n">traces</span><span class="p">[:</span><span class="mi">10</span><span class="p">]:</span>
+        <span class="n">trace</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">get_polygon_coords</span><span class="p">(</span><span class="n">geometry</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Extract x, y coordinates from Polygon or MultiPolygon.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">geometry</span><span class="o">.</span><span class="n">geom_type</span> <span class="o">==</span> <span class="s1">&#39;Polygon&#39;</span><span class="p">:</span>
+            <span class="c1"># For a single Polygon, get the exterior coordinates</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">geometry</span><span class="o">.</span><span class="n">exterior</span><span class="o">.</span><span class="n">xy</span>
+            <span class="k">return</span> <span class="p">[(</span><span class="nb">list</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="nb">list</span><span class="p">(</span><span class="n">y</span><span class="p">))]</span>  <span class="c1"># Return a list with one tuple of (x, y) coordinates</span>
+        
+        <span class="k">elif</span> <span class="n">geometry</span><span class="o">.</span><span class="n">geom_type</span> <span class="o">==</span> <span class="s1">&#39;MultiPolygon&#39;</span><span class="p">:</span>
+            <span class="c1"># For a MultiPolygon, get coordinates for each Polygon&#39;s exterior</span>
+            <span class="n">polygons_coords</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">polygon</span> <span class="ow">in</span> <span class="n">geometry</span><span class="o">.</span><span class="n">geoms</span><span class="p">:</span>  <span class="c1"># Iterate over each Polygon in the MultiPolygon</span>
+                <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">polygon</span><span class="o">.</span><span class="n">exterior</span><span class="o">.</span><span class="n">xy</span>
+                <span class="n">polygons_coords</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">list</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="nb">list</span><span class="p">(</span><span class="n">y</span><span class="p">)))</span>
+            <span class="k">return</span> <span class="n">polygons_coords</span>
+        
+        <span class="k">return</span> <span class="p">[]</span>  <span class="c1"># In case there are no coordinates</span>
+
+    <span class="c1"># Create scatter traces for each polygon</span>
+    <span class="n">polygon_traces</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">nhoods</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="n">geometry</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span>
+        <span class="n">nhood_name</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;nhood&#39;</span><span class="p">]</span>
+        
+        <span class="n">coords</span> <span class="o">=</span> <span class="n">get_polygon_coords</span><span class="p">(</span><span class="n">geometry</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">geometry</span><span class="o">.</span><span class="n">geom_type</span> <span class="o">==</span> <span class="s1">&#39;Polygon&#39;</span><span class="p">:</span>
+            <span class="c1"># For simple polygons, add one trace</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">coords</span>
+            <span class="n">polygon_traces</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+                <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
+                <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
+                <span class="n">name</span><span class="o">=</span><span class="n">nhood_name</span><span class="p">,</span>
+                <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">),</span>
+                    <span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span>
+            <span class="p">))</span>
+        <span class="k">elif</span> <span class="n">geometry</span><span class="o">.</span><span class="n">geom_type</span> <span class="o">==</span> <span class="s1">&#39;MultiPolygon&#39;</span><span class="p">:</span>
+            <span class="c1"># For multipolygons, add multiple traces</span>
+            <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">coords</span><span class="p">:</span>
+                <span class="n">polygon_traces</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+                    <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
+                    <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
+                    <span class="n">name</span><span class="o">=</span><span class="n">nhood_name</span><span class="p">,</span>
+                    <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">),</span>
+                    <span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span>
+                <span class="p">))</span>
+
+    <span class="c1"># Create steps for the slider, which will control the visibility of the clusters</span>
+    <span class="n">steps</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_clusters</span><span class="p">):</span>  <span class="c1"># Now the slider will go from 1 to 20 clusters</span>
+        <span class="n">step</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">method</span><span class="o">=</span><span class="s1">&#39;update&#39;</span><span class="p">,</span>
+            <span class="n">args</span><span class="o">=</span><span class="p">[{</span><span class="s1">&#39;visible&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">traces</span> <span class="o">+</span> <span class="n">polygon_traces</span><span class="p">)},</span>  <span class="c1"># Hide all traces initially</span>
+                <span class="p">{</span><span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;Top </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1"> areas with largest mean response duration&#39;</span><span class="p">}],</span>  
+            <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span>
+        <span class="p">)</span>
+        <span class="n">step</span><span class="p">[</span><span class="s1">&#39;args&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;visible&#39;</span><span class="p">][:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">step</span><span class="p">[</span><span class="s1">&#39;args&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;visible&#39;</span><span class="p">][</span><span class="n">max_clusters</span><span class="p">:]</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">polygon_traces</span><span class="p">)</span>
+        <span class="n">steps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">step</span><span class="p">)</span>
+
+    <span class="c1"># Create the slider</span>
+    <span class="n">sliders</span> <span class="o">=</span> <span class="p">[</span><span class="nb">dict</span><span class="p">(</span>
+        <span class="n">active</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span>
+        <span class="n">currentvalue</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;prefix&quot;</span><span class="p">:</span> <span class="s2">&quot;Number of clusters: &quot;</span><span class="p">},</span>
+        <span class="n">pad</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;t&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">},</span>
+        <span class="n">steps</span><span class="o">=</span><span class="n">steps</span>
+    <span class="p">)]</span>
+
+    <span class="c1"># Layout with a slider and buttons</span>
+    <span class="n">layout</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span>
+        <span class="n">height</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span>
+        <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Top 10 areas with largest mean response duration&quot;</span><span class="p">,</span>
+        <span class="n">sliders</span><span class="o">=</span><span class="n">sliders</span><span class="p">,</span>
+        <span class="n">xaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+            <span class="n">title</span><span class="o">=</span><span class="s1">&#39;longitude&#39;</span><span class="p">,</span>
+            <span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">122.52</span><span class="p">,</span> <span class="o">-</span><span class="mf">122.32</span><span class="p">],</span>
+            <span class="p">),</span>
+        <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+            <span class="n">title</span><span class="o">=</span><span class="s1">&#39;latitude&#39;</span><span class="p">,</span>
+            <span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mf">37.7</span><span class="p">,</span> <span class="mf">37.85</span><span class="p">],</span>
+            <span class="p">),</span>
+        <span class="n">showlegend</span><span class="o">=</span><span class="kc">False</span>
+    <span class="p">)</span>
+
+    <span class="c1"># # Create the figure with initial scatter and polygons</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">layout</span><span class="o">=</span><span class="n">layout</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">trace</span> <span class="ow">in</span> <span class="n">traces</span><span class="p">:</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">trace</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">trace</span> <span class="ow">in</span> <span class="n">polygon_traces</span><span class="p">:</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">trace</span><span class="p">)</span>
+    
+    <span class="c1"># # Export to HTML (for use in Jupyter Book or web embedding)</span>
+    <span class="c1"># fig.write_html(&quot;scatter_dynamic_polygons.html&quot;)</span>
+
+    <span class="c1"># Display the figure (in case you&#39;re running this interactively)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show_clusters_i</span><span class="p">(</span><span class="n">medic_sorted_clustered</span><span class="p">,</span> <span class="n">ordered_clusters</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>conclusion: inner clusters have worse mean time from response to on scene. could be data quality, but anyhow the data points to driving time being the biggest factor contributing to longer response times. its not units being so preoccupied. which means perhaps better resource allocation, or procedures for getting there, or just cleaner roads so that units can drive faster, would help, and especially in the inner clusters.</p>
+<p>When not weighting for frequency of calls, its the outer clusters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">cluster</span>
+<span class="k">def</span> <span class="nf">display_clusters_by_onscene_time</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">condition</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">condition</span><span class="p">]</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">dedup_calls</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">km</span> <span class="o">=</span> <span class="n">cluster</span><span class="o">.</span><span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">preds</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">km</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">x</span><span class="p">[[</span><span class="s1">&#39;norm_lat&#39;</span><span class="p">,</span> <span class="s1">&#39;norm_long&#39;</span><span class="p">]],</span> <span class="n">sample_weight</span><span class="o">=</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]))</span><span class="o">.</span><span class="n">to_frame</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;cluster&#39;</span><span class="p">)</span>
+    <span class="n">preds</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">index</span>
+    <span class="n">data_clustered</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">preds</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;slong&#39;</span><span class="p">,</span> <span class="s1">&#39;slat&#39;</span><span class="p">])</span>
+
+    <span class="n">cluster_metrics</span> <span class="o">=</span> <span class="n">data_clustered</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;cluster&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">response_to_onscene</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">ordered_clusters</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">cluster_metrics</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+    
+<span class="c1">#     sns.catplot(data_clustered, x=&#39;cluster&#39;, y=&#39;response_to_onscene&#39;, kind=&quot;box&quot;, log_scale=True,</span>
+<span class="c1">#            height=5, aspect=2, order=ordered_clusters)</span>
+
+    <span class="n">show_clusters_i</span><span class="p">(</span><span class="n">data_clustered</span><span class="p">,</span> <span class="n">ordered_clusters</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display_clusters_by_onscene_time</span><span class="p">(</span><span class="n">medic_sorted</span><span class="p">,</span> <span class="n">medic_sorted</span><span class="o">.</span><span class="n">final_priority</span> <span class="o">==</span> <span class="s1">&#39;3&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display_clusters_by_onscene_time</span><span class="p">(</span><span class="n">medic_sorted</span><span class="p">,</span> <span class="n">medic_sorted</span><span class="o">.</span><span class="n">final_priority</span> <span class="o">==</span> <span class="s1">&#39;2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">permutation_test</span>
+
+<span class="k">def</span> <span class="nf">run_permutation_test</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">condition</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">condition</span><span class="p">]</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">dedup_calls</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">km</span> <span class="o">=</span> <span class="n">cluster</span><span class="o">.</span><span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">preds</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">km</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">x</span><span class="p">[[</span><span class="s1">&#39;norm_lat&#39;</span><span class="p">,</span> <span class="s1">&#39;norm_long&#39;</span><span class="p">]],</span> <span class="n">sample_weight</span><span class="o">=</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]))</span><span class="o">.</span><span class="n">to_frame</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;cluster&#39;</span><span class="p">)</span>
+    <span class="n">preds</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">index</span>
+    <span class="n">data_clustered</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">preds</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;slong&#39;</span><span class="p">,</span> <span class="s1">&#39;slat&#39;</span><span class="p">])</span>
+
+    <span class="n">cluster_metrics</span> <span class="o">=</span> <span class="n">data_clustered</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;cluster&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">response_to_onscene</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">ordered_clusters</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">cluster_metrics</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+    
+    <span class="n">data_clustered</span><span class="p">[</span><span class="s1">&#39;worst_clusters&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_clustered</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">ordered_clusters</span><span class="p">[</span><span class="o">-</span><span class="mi">20</span><span class="p">:])</span>
+    
+    <span class="n">sampled</span> <span class="o">=</span> <span class="n">data_clustered</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">group1</span> <span class="o">=</span> <span class="n">sampled</span><span class="p">[</span><span class="n">sampled</span><span class="o">.</span><span class="n">worst_clusters</span><span class="p">]</span><span class="o">.</span><span class="n">response_to_onscene</span>
+    <span class="n">group2</span> <span class="o">=</span> <span class="n">sampled</span><span class="p">[</span><span class="o">~</span><span class="n">sampled</span><span class="o">.</span><span class="n">worst_clusters</span><span class="p">]</span><span class="o">.</span><span class="n">response_to_onscene</span>
+
+    <span class="c1"># Run the permutation test</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">permutation_test</span><span class="p">((</span><span class="n">group1</span><span class="p">,</span> <span class="n">group2</span><span class="p">),</span> 
+                              <span class="n">statistic</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> 
+                              <span class="n">n_resamples</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span>  <span class="c1"># Monte Carlo approximation with 10,000 resamples</span>
+                              <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># run_permutation_test(medic_sorted, medic_sorted.final_priority == &#39;2&#39;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=np.float64(1.5456608476783895), pvalue=np.float64(9.999000099990002e-05), null_distribution=array([ 0.04751363,  0.01818739,  0.12926612, ..., -0.07672199,
+       -0.21563079, -0.01325226]))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># run_permutation_test(medic_sorted, medic_sorted.final_priority == &#39;3&#39;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=2.1422014776409624, pvalue=9.999000099990002e-05, null_distribution=array([ 0.05786642, -0.00409107, -0.14543102, ...,  0.04538537,
+        0.04707687, -0.26699531]))
+</pre></div>
+</div>
+</div>
+</div>
+<p>Back to investigating what’s correlated with prev_rest_min &lt; 0</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">medic_sorted</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;has_transport&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">medic_sorted</span><span class="o">.</span><span class="n">transport_dttm</span><span class="o">.</span><span class="n">notnull</span><span class="p">()</span>
+<span class="n">medic_sorted</span><span class="p">[</span><span class="s1">&#39;prev_has_transport&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="k">for</span> <span class="n">unit_id</span> <span class="ow">in</span> <span class="n">medic_sorted</span><span class="o">.</span><span class="n">unit_id</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+    <span class="n">unit_filter</span> <span class="o">=</span> <span class="n">medic_sorted</span><span class="o">.</span><span class="n">unit_id</span> <span class="o">==</span> <span class="n">unit_id</span>
+    <span class="n">index_to_set</span> <span class="o">=</span> <span class="n">medic_sorted</span><span class="p">[</span><span class="n">unit_filter</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">index</span>
+    <span class="n">prev_has_transport</span> <span class="o">=</span> <span class="n">medic_sorted</span><span class="p">[</span><span class="n">unit_filter</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">has_transport</span>
+    <span class="n">prev_has_transport</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">index_to_set</span>
+    <span class="n">medic_sorted</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">unit_filter</span><span class="p">,</span> <span class="s1">&#39;prev_has_transport&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">prev_has_transport</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tmp</span> <span class="o">=</span> <span class="n">medic_sorted</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">tmp</span><span class="p">[(</span><span class="n">tmp</span><span class="o">.</span><span class="n">prev_rest_min</span> <span class="o">&lt;</span> <span class="mi">2500</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">tmp</span><span class="o">.</span><span class="n">prev_rest_min</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">50</span><span class="p">)],</span>
+            <span class="n">x</span><span class="o">=</span><span class="s1">&#39;prev_rest_min&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;received_to_dispatch_perc&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;prev_has_transport&#39;</span><span class="p">,</span>
+             <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.JointGrid at 0x2b8a48550&gt;
+</pre></div>
+</div>
+<img alt="_images/7c8b9281d8de4c18b354888edab20cea7460c4f83edd2e6eef8018a74b921c17.png" src="_images/7c8b9281d8de4c18b354888edab20cea7460c4f83edd2e6eef8018a74b921c17.png" />
+</div>
+</div>
+</section>
+<section id="investgating-diversions">
+<h2>investgating diversions<a class="headerlink" href="#investgating-diversions" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %load_ext autoreload</span>
+<span class="c1"># %autoreload 2</span>
+<span class="c1"># from utils import get_hospital_diversions</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diversions</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s1">&#39;raw_data_analysis/hospital_diversions.parquet&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diversions</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>hospital_full</th>
+      <th>hospital_abbrev</th>
+      <th>diversion_category</th>
+      <th>started</th>
+      <th>ended</th>
+      <th>duration_in_minutes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>California Pacific Medical Center - Van Ness</td>
+      <td>CPMC - Van Ness</td>
+      <td>ED</td>
+      <td>2024-04-30 14:35:00</td>
+      <td>2024-04-30 14:44:00</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>California Pacific Medical Center - Van Ness</td>
+      <td>CPMC - Van Ness</td>
+      <td>ED</td>
+      <td>2024-04-30 20:31:00</td>
+      <td>2024-04-30 22:27:00</td>
+      <td>116.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>California Pacific Medical Center - Van Ness</td>
+      <td>CPMC - Van Ness</td>
+      <td>ED</td>
+      <td>2024-05-01 09:18:00</td>
+      <td>2024-05-01 11:18:00</td>
+      <td>120.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>California Pacific Medical Center - Van Ness</td>
+      <td>CPMC - Van Ness</td>
+      <td>ED</td>
+      <td>2024-05-01 11:21:00</td>
+      <td>2024-05-01 11:28:00</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>California Pacific Medical Center - Van Ness</td>
+      <td>CPMC - Van Ness</td>
+      <td>ED</td>
+      <td>2024-05-01 15:27:00</td>
+      <td>2024-05-01 17:27:00</td>
+      <td>120.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diversions</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(12181, 6)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diversions</span><span class="o">.</span><span class="n">duration_in_minutes</span> <span class="o">=</span> <span class="n">diversions</span><span class="o">.</span><span class="n">duration_in_minutes</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diversions</span><span class="o">.</span><span class="n">duration_in_minutes</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: ylabel=&#39;Frequency&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/7a4916bb709e0469dac83232fd8b095a6803b74f9b9713d43984746c876618cb.png" src="_images/7a4916bb709e0469dac83232fd8b095a6803b74f9b9713d43984746c876618cb.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diversions</span><span class="p">[</span><span class="n">diversions</span><span class="o">.</span><span class="n">duration_in_minutes</span> <span class="o">&lt;</span> <span class="mi">60</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>hospital_full</th>
+      <th>hospital_abbrev</th>
+      <th>diversion_category</th>
+      <th>started</th>
+      <th>ended</th>
+      <th>duration_in_minutes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>California Pacific Medical Center - Van Ness</td>
+      <td>CPMC - Van Ness</td>
+      <td>ED</td>
+      <td>2024-04-30 14:35:00</td>
+      <td>2024-04-30 14:44:00</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>California Pacific Medical Center - Van Ness</td>
+      <td>CPMC - Van Ness</td>
+      <td>ED</td>
+      <td>2024-05-01 11:21:00</td>
+      <td>2024-05-01 11:28:00</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>California Pacific Medical Center - Van Ness</td>
+      <td>CPMC - Van Ness</td>
+      <td>ED</td>
+      <td>2024-05-01 17:29:00</td>
+      <td>2024-05-01 18:22:00</td>
+      <td>53.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>California Pacific Medical Center - Van Ness</td>
+      <td>CPMC - Van Ness</td>
+      <td>ED</td>
+      <td>2024-05-01 22:21:00</td>
+      <td>2024-05-01 22:32:00</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>California Pacific Medical Center - Van Ness</td>
+      <td>CPMC - Van Ness</td>
+      <td>ED</td>
+      <td>2024-05-02 02:32:00</td>
+      <td>2024-05-02 02:44:00</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>12174</th>
+      <td>Chinese Hospital</td>
+      <td>Chinese</td>
+      <td>ED</td>
+      <td>2024-03-16 12:25:00</td>
+      <td>2024-03-16 12:27:00</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>12175</th>
+      <td>Chinese Hospital</td>
+      <td>Chinese</td>
+      <td>ED</td>
+      <td>2024-03-18 10:15:00</td>
+      <td>2024-03-18 10:17:00</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>12177</th>
+      <td>Chinese Hospital</td>
+      <td>Chinese</td>
+      <td>ED</td>
+      <td>2024-03-19 16:01:00</td>
+      <td>2024-03-19 16:03:00</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>12178</th>
+      <td>Chinese Hospital</td>
+      <td>Chinese</td>
+      <td>ED</td>
+      <td>2024-03-29 12:48:00</td>
+      <td>2024-03-29 13:43:00</td>
+      <td>55.0</td>
+    </tr>
+    <tr>
+      <th>12179</th>
+      <td>Chinese Hospital</td>
+      <td>Chinese</td>
+      <td>ED</td>
+      <td>2024-04-02 11:40:00</td>
+      <td>2024-04-02 11:42:00</td>
+      <td>2.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5000 rows × 6 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the range of hours you want to analyze</span>
+<span class="n">all_periods</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">diversions</span><span class="p">[</span><span class="s1">&#39;started&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="s1">&#39;30T&#39;</span><span class="p">),</span> 
+                          <span class="n">end</span><span class="o">=</span><span class="n">diversions</span><span class="p">[</span><span class="s1">&#39;ended&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="s1">&#39;30T&#39;</span><span class="p">),</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;30T&#39;</span><span class="p">)</span>
+
+<span class="c1"># Create a DataFrame to store the number of hospitals in diversion each hour</span>
+<span class="n">diversion_counts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;period&#39;</span><span class="p">:</span> <span class="n">all_periods</span><span class="p">})</span>
+
+<span class="c1"># For each hour, count the number of hospitals that are in diversion</span>
+<span class="n">diversion_counts</span><span class="p">[</span><span class="s1">&#39;diversion_count&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">diversion_counts</span><span class="p">[</span><span class="s1">&#39;period&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">h</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">diversions</span><span class="p">[</span><span class="s1">&#39;started&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">h</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">diversions</span><span class="p">[</span><span class="s1">&#39;ended&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">h</span><span class="p">))</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/h2/v02yh68x5vz3hbxw0mxbfpsw0000gn/T/ipykernel_80853/925204955.py:2: FutureWarning:
+
+&#39;T&#39; is deprecated and will be removed in a future version, please use &#39;min&#39; instead.
+
+/var/folders/h2/v02yh68x5vz3hbxw0mxbfpsw0000gn/T/ipykernel_80853/925204955.py:3: FutureWarning:
+
+&#39;T&#39; is deprecated and will be removed in a future version, please use &#39;min&#39; instead.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diversion_counts</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>period</th>
+      <th>diversion_count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2023-01-01 02:00:00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2023-01-01 02:30:00</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2023-01-01 03:00:00</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2023-01-01 03:30:00</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2023-01-01 04:00:00</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">medic_sorted</span><span class="p">[</span><span class="s1">&#39;received_30T&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">medic_sorted</span><span class="o">.</span><span class="n">received_dttm</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="s1">&#39;30min&#39;</span><span class="p">)</span>
+<span class="n">medic_sorted</span><span class="p">[</span><span class="s1">&#39;received_30T_prev&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">medic_sorted</span><span class="o">.</span><span class="n">received_30T</span> <span class="o">-</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">medic_sorted_with_diversions</span> <span class="o">=</span> <span class="n">medic_sorted</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">diversion_counts</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">,</span>
+                                        <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;received_30T&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;period&#39;</span><span class="p">)</span>
+<span class="n">medic_sorted_with_diversions</span> <span class="o">=</span> <span class="n">medic_sorted_with_diversions</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">diversion_counts</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">,</span>
+                                        <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;received_30T_prev&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;period&#39;</span><span class="p">,</span>
+                                        <span class="n">suffixes</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;_curr&#39;</span><span class="p">,</span> <span class="s1">&#39;_prev&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">medic_sorted_with_diversions</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>call_number</th>
+      <th>unit_id</th>
+      <th>incident_number</th>
+      <th>call_type</th>
+      <th>call_date</th>
+      <th>watch_date</th>
+      <th>received_dttm</th>
+      <th>entry_dttm</th>
+      <th>dispatch_dttm</th>
+      <th>...</th>
+      <th>prev_rest_min</th>
+      <th>avail_when_received</th>
+      <th>prev_has_transport</th>
+      <th>has_transport</th>
+      <th>received_30T</th>
+      <th>received_30T_prev</th>
+      <th>period_curr</th>
+      <th>diversion_count_curr</th>
+      <th>period_prev</th>
+      <th>diversion_count_prev</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>230010486-66</td>
+      <td>230010486</td>
+      <td>66</td>
+      <td>23000085</td>
+      <td>Medical Incident</td>
+      <td>2023-01-01</td>
+      <td>2022-12-31</td>
+      <td>2023-01-01 02:35:05</td>
+      <td>2023-01-01 02:35:05</td>
+      <td>2023-01-01 03:04:46</td>
+      <td>...</td>
+      <td>-15.400000</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>2023-01-01 02:30:00</td>
+      <td>2023-01-01 02:00:00</td>
+      <td>2023-01-01 02:30:00</td>
+      <td>1</td>
+      <td>2023-01-01 02:00:00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>230010507-60</td>
+      <td>230010507</td>
+      <td>60</td>
+      <td>23000091</td>
+      <td>Medical Incident</td>
+      <td>2023-01-01</td>
+      <td>2022-12-31</td>
+      <td>2023-01-01 02:36:52</td>
+      <td>2023-01-01 02:40:11</td>
+      <td>2023-01-01 02:40:33</td>
+      <td>...</td>
+      <td>147.883333</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>2023-01-01 02:30:00</td>
+      <td>2023-01-01 02:00:00</td>
+      <td>2023-01-01 02:30:00</td>
+      <td>1</td>
+      <td>2023-01-01 02:00:00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>230010499-68</td>
+      <td>230010499</td>
+      <td>68</td>
+      <td>23000088</td>
+      <td>Medical Incident</td>
+      <td>2023-01-01</td>
+      <td>2022-12-31</td>
+      <td>2023-01-01 02:38:43</td>
+      <td>2023-01-01 02:38:43</td>
+      <td>2023-01-01 02:55:25</td>
+      <td>...</td>
+      <td>-16.633333</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>2023-01-01 02:30:00</td>
+      <td>2023-01-01 02:00:00</td>
+      <td>2023-01-01 02:30:00</td>
+      <td>1</td>
+      <td>2023-01-01 02:00:00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>230010515-77</td>
+      <td>230010515</td>
+      <td>77</td>
+      <td>23000093</td>
+      <td>Medical Incident</td>
+      <td>2023-01-01</td>
+      <td>2022-12-31</td>
+      <td>2023-01-01 02:39:25</td>
+      <td>2023-01-01 02:42:10</td>
+      <td>2023-01-01 02:43:38</td>
+      <td>...</td>
+      <td>6.616667</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>2023-01-01 02:30:00</td>
+      <td>2023-01-01 02:00:00</td>
+      <td>2023-01-01 02:30:00</td>
+      <td>1</td>
+      <td>2023-01-01 02:00:00</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>230010525-64</td>
+      <td>230010525</td>
+      <td>64</td>
+      <td>23000094</td>
+      <td>Medical Incident</td>
+      <td>2023-01-01</td>
+      <td>2022-12-31</td>
+      <td>2023-01-01 02:43:16</td>
+      <td>2023-01-01 02:45:28</td>
+      <td>2023-01-01 02:57:10</td>
+      <td>...</td>
+      <td>13.150000</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>2023-01-01 02:30:00</td>
+      <td>2023-01-01 02:00:00</td>
+      <td>2023-01-01 02:30:00</td>
+      <td>1</td>
+      <td>2023-01-01 02:00:00</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 66 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">medic_sorted_with_diversions</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;diversion_count_curr&#39;</span><span class="p">,</span>
+             <span class="n">y</span><span class="o">=</span><span class="s1">&#39;received_to_dispatch_perc&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.JointGrid at 0x2b043e6d0&gt;
+</pre></div>
+</div>
+<img alt="_images/0f099b3e9090b2cc4f2f27d7c61a533fd9de993b158230049cdadad0d65f2093.png" src="_images/0f099b3e9090b2cc4f2f27d7c61a533fd9de993b158230049cdadad0d65f2093.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">medic_sorted_with_diversions</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;diversion_count_prev&#39;</span><span class="p">,</span>
+             <span class="n">y</span><span class="o">=</span><span class="s1">&#39;received_to_dispatch_perc&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.JointGrid at 0x2a6ddbbd0&gt;
+</pre></div>
+</div>
+<img alt="_images/2b649dbea70f081305d8c0088cad445fb8a808b98a8c6a15b7bb4f13723d3329.png" src="_images/2b649dbea70f081305d8c0088cad445fb8a808b98a8c6a15b7bb4f13723d3329.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">medic_sorted_with_diversions</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;diversion_count_prev&#39;</span><span class="p">,</span>
+             <span class="n">y</span><span class="o">=</span><span class="s1">&#39;received_to_onscene_log&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.JointGrid at 0x2a7dd25d0&gt;
+</pre></div>
+</div>
+<img alt="_images/2ec3ee4be79ccdb10ad6a8bfc9c69f354cf6fbf2a9137a8a0e806e8bcff91661.png" src="_images/2ec3ee4be79ccdb10ad6a8bfc9c69f354cf6fbf2a9137a8a0e806e8bcff91661.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Motivation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#key-insights">Key Insights</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#recommendations">Recommendations</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of contents</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-sources">Data sources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#call-duration-breakdown">Call duration breakdown</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-geographies-for-responding">Exploring geographies for responding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-dispatching">Exploring dispatching</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-intro-cleaning">Data intro / cleaning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#high-level">high level</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#investgating-diversions">investgating diversions</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
