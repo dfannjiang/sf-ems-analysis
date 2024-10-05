@@ -5,3 +5,4 @@ format: jb-book
 root: intro
 chapters:
   - file: test.ipynb
+  - file: response_time_eda.ipynb
