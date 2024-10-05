@@ -33,3 +33,5 @@ html:
 
 exclude_patterns:
   - raw_data_analysis/*
+
+jupyter_execute_notebooks: "off"
