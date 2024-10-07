@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>SF 911 Response Time Analysis &#8212; My sample book</title>
+    <title>911 Response Time Analysis &#8212; My sample book</title>
   
   
   
@@ -179,7 +179,7 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">SF 911 Response Time Analysis</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">911 Response Time Analysis</a></li>
 </ul>
 
     </div>
@@ -318,7 +318,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>SF 911 Response Time Analysis</h1>
+    <h1>911 Response Time Analysis</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -331,7 +331,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">🚀 Motivation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-insights">🔍 Key Insights</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommendations">🔧 Recommendations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of contents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">📋 Table of contents</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-data">About the data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#high-level-analytics">High level analytics</a></li>
@@ -340,6 +340,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispatching-busy-ambulances">Dispatching busy ambulances</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spatial-analysis-of-driving-times">Spatial analysis of driving times</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#affect-of-hospital-diversions-on-response-times">Affect of hospital diversions on response times</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Recommendations</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -351,8 +355,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="sf-911-response-time-analysis">
-<h1>SF 911 Response Time Analysis<a class="headerlink" href="#sf-911-response-time-analysis" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="response-time-analysis">
+<h1>911 Response Time Analysis<a class="headerlink" href="#response-time-analysis" title="Link to this heading">#</a></h1>
 <section id="motivation">
 <h2>🚀 Motivation<a class="headerlink" href="#motivation" title="Link to this heading">#</a></h2>
 <p>I want to understand how quickly the San Francisco Fire Department (FD) and Department of Emergency Management (DEM) respond medical 911 calls and see where improvements can be made to their response times.</p>
@@ -374,7 +378,7 @@ document.write(`
 </ul>
 </section>
 <section id="table-of-contents">
-<h2>Table of contents<a class="headerlink" href="#table-of-contents" title="Link to this heading">#</a></h2>
+<h2>📋 Table of contents<a class="headerlink" href="#table-of-contents" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><a class="reference internal" href="#background"><span class="xref myst">Background</span></a></p></li>
 <li><p><a class="reference internal" href="#about-the-data"><span class="xref myst">About the data</span></a></p></li>
@@ -384,6 +388,7 @@ document.write(`
 <li><p><a class="reference internal" href="#dispatching-busy-ambulances"><span class="xref myst">Dispatching busy ambulances</span></a></p></li>
 <li><p><a class="reference internal" href="#spatial-analysis-of-driving-times"><span class="xref myst">Spatial analysis of driving times</span></a></p></li>
 <li><p><a class="reference internal" href="#affect-of-hospital-diversions-on-response-times"><span class="xref myst">Affect of hospital diversions on response times</span></a></p></li>
+<li><p><a class="reference internal" href="#summary"><span class="xref myst">Summary</span></a></p></li>
 </ol>
 </section>
 <section id="background">
@@ -391,7 +396,7 @@ document.write(`
 <p>The life cycle of a 911 call:</p>
 <p><img alt="ambulance-response-process.png" src="_images/ambulance-response-process.png" /></p>
 <p><em><a class="reference external" href="https://www.sf.gov/data/ambulance-response-life-threatening-emergencies">source</a></em></p>
-<p>According to the <a class="reference external" href="https://www.sf.gov/sites/default/files/2023-12/FY23APRfinal.pdf">2023 SF Annual Performance report</a>, FD responds to 80-90% of 911 calls requiring an ambulance, and their goal is respond in under 10 minutes for code 3 calls (life-threatening) and under 20 minutes for code 2 calls (non-life-threatening). Their definition of their response time is the “Roll/Response” time (see above, <a class="reference external" href="https://www.sf.gov/data/ambulance-response-life-threatening-emergencies">source</a>), which is only a portion of the lifecycle of a 911 call. <strong>However, if I’m the caller, I ultimately care about the entire duration between initating the call and when an ambulance arrives - the “Call Duration” time (see above)</strong>. In this project, I analyze DEM and FD’s performance using this metric, which I’ll call the “response time”.</p>
+<p>According to the <a class="reference external" href="https://www.sf.gov/sites/default/files/2023-12/FY23APRfinal.pdf">2023 SF Annual Performance report</a>, FD responds to 80-90% of 911 calls requiring an ambulance, and their goal is respond in under 10 minutes for code 3 calls (life-threatening) and under 20 minutes for code 2 calls (non-life-threatening). Their definition of their response time is the “Roll/Response” time (see above, <a class="reference external" href="https://www.sf.gov/data/ambulance-response-life-threatening-emergencies">source</a>), which is only a portion of the lifecycle of a 911 call. <strong>However, if I’m the caller, I ultimately care about the entire duration between initating the call and when an ambulance arrives - the “Call Duration” time</strong> (see above). In this project, I analyze DEM and FD’s performance using this metric, which I’ll call the “response time”.</p>
 </section>
 <section id="about-the-data">
 <h2>About the data<a class="headerlink" href="#about-the-data" title="Link to this heading">#</a></h2>
@@ -416,7 +421,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s1">&#39;raw_data_analysis/08122024-5yr.parquet&#39;</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">raw</span><span class="p">[(</span><span class="n">raw</span><span class="o">.</span><span class="n">call_date</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span> <span class="o">&gt;=</span> <span class="mi">2021</span><span class="p">)]</span>
-
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;code&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">final_priority</span>
 <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;on_scene_hour&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">on_scene_dttm</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">hour</span>
 <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;on_scene_day_of_week&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">on_scene_dttm</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">dayofweek</span>
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
@@ -494,7 +499,7 @@ document.write(`
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="n">tmp</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">unit_type</span> <span class="o">==</span> <span class="s1">&#39;MEDIC&#39;</span><span class="p">]</span>
 <span class="n">tmp</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tmp</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;incident_number&#39;</span><span class="p">)[</span><span class="s1">&#39;dispatch_dttm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()]</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;received_to_onscene&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;final_priority&#39;</span><span class="p">,</span> <span class="n">hue_order</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">],</span> <span class="n">showfliers</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;received_to_onscene&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="n">hue_order</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">],</span> <span class="n">showfliers</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="c1"># Retrieve the lines that make up the boxplot</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
@@ -525,7 +530,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b2ba508a21da7262379d294e538d7318b6d415553000c0bd89f8ba4927008703.png" src="_images/b2ba508a21da7262379d294e538d7318b6d415553000c0bd89f8ba4927008703.png" />
+<img alt="_images/1501612927399602573bbdeae8146f99987c251007a9957725eb6bbefc707ddf.png" src="_images/1501612927399602573bbdeae8146f99987c251007a9957725eb6bbefc707ddf.png" />
 </div>
 </div>
 </section>
@@ -547,15 +552,15 @@ document.write(`
         <span class="n">autopct</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%.0f%%</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Late&#39;</span><span class="p">,</span> <span class="s1">&#39;On Time&#39;</span><span class="p">]);</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Calls broken down by their response times&#39;</span><span class="p">);</span>
 
-<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">pie</span><span class="p">([</span><span class="nb">len</span><span class="p">(</span><span class="n">medic</span><span class="p">[</span><span class="n">medic</span><span class="o">.</span><span class="n">final_priority</span> <span class="o">==</span> <span class="s1">&#39;2&#39;</span><span class="p">]),</span><span class="nb">len</span><span class="p">(</span><span class="n">medic</span><span class="p">[</span><span class="n">medic</span><span class="o">.</span><span class="n">final_priority</span> <span class="o">==</span> <span class="s1">&#39;3&#39;</span><span class="p">])],</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">pie</span><span class="p">([</span><span class="nb">len</span><span class="p">(</span><span class="n">medic</span><span class="p">[</span><span class="n">medic</span><span class="o">.</span><span class="n">code</span> <span class="o">==</span> <span class="s1">&#39;2&#39;</span><span class="p">]),</span><span class="nb">len</span><span class="p">(</span><span class="n">medic</span><span class="p">[</span><span class="n">medic</span><span class="o">.</span><span class="n">code</span> <span class="o">==</span> <span class="s1">&#39;3&#39;</span><span class="p">])],</span>
         <span class="n">colors</span><span class="o">=</span><span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;tab10&#39;</span><span class="p">),</span>
-        <span class="n">autopct</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%.0f%%</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Code 2&#39;</span><span class="p">,</span> <span class="s1">&#39;Code 3&#39;</span><span class="p">]);</span>
+        <span class="n">autopct</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%.0f%%</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Code 2 (non-life threatening)&#39;</span><span class="p">,</span> <span class="s1">&#39;Code 3 (life threatening)&#39;</span><span class="p">]);</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Among calls with late responses, breakdown of code 3 and code 2 calls.&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f63da0b2f56681d18debf533a36debb913c5765ae0012d0f29102c1a0d933701.png" src="_images/f63da0b2f56681d18debf533a36debb913c5765ae0012d0f29102c1a0d933701.png" />
+<img alt="_images/2503600ebe619597812ed31b93483b627e81b9c0ad5df64a5d9ea580bab711d2.png" src="_images/2503600ebe619597812ed31b93483b627e81b9c0ad5df64a5d9ea580bab711d2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -570,7 +575,7 @@ document.write(`
 <div class="cell_output docutils container">
 </div>
 </div>
-<p>As we can see below, there is a strong association between response times and volume of calls in that time period: Avg response times peak on friday when most calls during the week happen, and particularly between 10am and 5pm when most calls during a day happen.</p>
+<p>As we can see below, there is a strong association between response times and volume of calls in that time period: Avg response times peak on friday when most calls during the week happen, and particularly between 10am and 6pm when most calls during a day happen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">medic_onscene_day</span> <span class="o">=</span> <span class="n">medic</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;received_day_of_week&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">received_to_onscene</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
@@ -650,17 +655,17 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fix</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">medic</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;received_to_onscene&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;final_priority&#39;</span><span class="p">);</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">medic</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;received_to_onscene&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;code&#39;</span><span class="p">);</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Response time&#39;</span><span class="p">)</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;min&#39;</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">medic</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;received_to_onscene&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">log_scale</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;final_priority&#39;</span><span class="p">);</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">medic</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;received_to_onscene&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">log_scale</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;code&#39;</span><span class="p">);</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;log(response time)&#39;</span><span class="p">)</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;min&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/71299d39d568aa5516253fe6d948969712c19ec9b15d0035fe9e2415bf3b2d5e.png" src="_images/71299d39d568aa5516253fe6d948969712c19ec9b15d0035fe9e2415bf3b2d5e.png" />
+<img alt="_images/2a15d5dbb49518eb64eccb9a1cdc554da8c2e3f98fb62abd0dc27473fa4280d2.png" src="_images/2a15d5dbb49518eb64eccb9a1cdc554da8c2e3f98fb62abd0dc27473fa4280d2.png" />
 </div>
 </div>
 </section>
@@ -689,7 +694,7 @@ Let’s visualize which stages take up the biggest portions of the total respons
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">medic</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
             <span class="n">x</span><span class="o">=</span><span class="s1">&#39;received_to_dispatch_perc&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;received_to_onscene_log&#39;</span><span class="p">,</span>
-           <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;final_priority&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;kde&quot;</span><span class="p">,</span> <span class="n">hue_order</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">]);</span>
+           <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;kde&quot;</span><span class="p">,</span> <span class="n">hue_order</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">% d</span><span class="s2">uration(received -&gt; dispatch) vs log(response time)&quot;</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">% d</span><span class="s1">uration(received -&gt; dispatch)&#39;</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;log (response time)&#39;</span><span class="p">);</span>
@@ -698,14 +703,14 @@ Let’s visualize which stages take up the biggest portions of the total respons
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/471b892b7e24557ba39ab268ab83c49afbecbd980b408282e4ef88f1034e9d90.png" src="_images/471b892b7e24557ba39ab268ab83c49afbecbd980b408282e4ef88f1034e9d90.png" />
+<img alt="_images/58f15d23abf4e0201a2e8e679d3eadd9507c15a51e108e387c0230518bc23842.png" src="_images/58f15d23abf4e0201a2e8e679d3eadd9507c15a51e108e387c0230518bc23842.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">medic</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
             <span class="n">x</span><span class="o">=</span><span class="s1">&#39;dispatch_to_response_perc&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;received_to_onscene_log&#39;</span><span class="p">,</span>
-           <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;final_priority&#39;</span><span class="p">,</span> <span class="n">hue_order</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">]);</span>
+           <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="n">hue_order</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">]);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">% d</span><span class="s2">uration(dispatch -&gt; response) vs log(response time)&quot;</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">% d</span><span class="s1">uration(dispatch -&gt; response)&#39;</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;log (response time)&#39;</span><span class="p">);</span>
@@ -714,14 +719,14 @@ Let’s visualize which stages take up the biggest portions of the total respons
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6559eedadba971a98aa7f03f2af874c9a124307a74da8bdedd3c2062c52b533a.png" src="_images/6559eedadba971a98aa7f03f2af874c9a124307a74da8bdedd3c2062c52b533a.png" />
+<img alt="_images/caef778469f8a7bb1085942e40e495e554f982036b2d7b04c804d32372a18e05.png" src="_images/caef778469f8a7bb1085942e40e495e554f982036b2d7b04c804d32372a18e05.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">medic</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
             <span class="n">x</span><span class="o">=</span><span class="s1">&#39;response_to_onscene_perc&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;received_to_onscene_log&#39;</span><span class="p">,</span>
-           <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;final_priority&#39;</span><span class="p">,</span> <span class="n">hue_order</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">]);</span>
+           <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="n">hue_order</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">]);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">% d</span><span class="s2">uration(response -&gt; on scene) vs log(response time)&quot;</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">% d</span><span class="s1">uration(response -&gt; onscene)&#39;</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;log (response time)&#39;</span><span class="p">);</span>
@@ -730,7 +735,7 @@ Let’s visualize which stages take up the biggest portions of the total respons
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/55b122fc80f03e37a0492ab2a26704baf1ac9da2ddf64e0fdf3485c3a919e38e.png" src="_images/55b122fc80f03e37a0492ab2a26704baf1ac9da2ddf64e0fdf3485c3a919e38e.png" />
+<img alt="_images/2b99fdb46cbd57d90a2cdd5c556bbeb2ca1468937a4b0611732eb8093ff259e3.png" src="_images/2b99fdb46cbd57d90a2cdd5c556bbeb2ca1468937a4b0611732eb8093ff259e3.png" />
 </div>
 </div>
 <p><strong>Conclusion</strong>: On average, 20% of the response time is spent receiving the call and dispatching an ambulance, and 80% is spent getting to the scene after acknowledging the dispatch. The time it takes for the ambulance to acknowledge the dispatch is negligible. There seems to be some correlation between these proportions and the total response time, especially for code 2 calls.</p>
@@ -849,7 +854,7 @@ Let’s visualize which stages take up the biggest portions of the total respons
     <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;long&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;lat&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;cluster&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
     <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">stations</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;long&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;lat&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">122.52</span><span class="p">,</span> <span class="o">-</span><span class="mf">122.32</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">37.7</span><span class="p">,</span> <span class="mf">37.85</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">37.7088</span><span class="p">,</span> <span class="mf">37.85</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Latitude&#39;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Longitude&#39;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
@@ -861,15 +866,15 @@ Let’s visualize which stages take up the biggest portions of the total respons
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">show_clusters</span><span class="p">(</span><span class="n">medic_sorted_clustered</span><span class="p">,</span> <span class="n">medic_sorted_clustered</span><span class="o">.</span><span class="n">final_priority</span> <span class="o">==</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span>
+<span class="n">show_clusters</span><span class="p">(</span><span class="n">medic_sorted_clustered</span><span class="p">,</span> <span class="n">medic_sorted_clustered</span><span class="o">.</span><span class="n">code</span> <span class="o">==</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span>
              <span class="s1">&#39;Code 3 calls: areas with worst driving times&#39;</span><span class="p">,</span> <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">show_clusters</span><span class="p">(</span><span class="n">medic_sorted_clustered</span><span class="p">,</span> <span class="n">medic_sorted_clustered</span><span class="o">.</span><span class="n">final_priority</span> <span class="o">==</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span>
+<span class="n">show_clusters</span><span class="p">(</span><span class="n">medic_sorted_clustered</span><span class="p">,</span> <span class="n">medic_sorted_clustered</span><span class="o">.</span><span class="n">code</span> <span class="o">==</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span>
              <span class="s1">&#39;Code 2 calls: areas with worst driving times&#39;</span><span class="p">,</span> <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/18b2feddf80b8ca1138a6a6dbb0a29e2a3182eee9d8002b707a93dfdfdf58811.png" src="_images/18b2feddf80b8ca1138a6a6dbb0a29e2a3182eee9d8002b707a93dfdfdf58811.png" />
+<img alt="_images/903f5a58df9acdc563eb71c1367566bbb67f674d0203fca0bd907ec1c9d1c893.png" src="_images/903f5a58df9acdc563eb71c1367566bbb67f674d0203fca0bd907ec1c9d1c893.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -899,10 +904,10 @@ Let’s visualize which stages take up the biggest portions of the total respons
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Code 2 calls: permutation test for difference in mean driving time between worst areas vs others:&#39;</span><span class="p">)</span>
-<span class="n">run_permutation_test</span><span class="p">(</span><span class="n">medic_sorted_clustered</span><span class="p">,</span> <span class="n">medic_sorted_clustered</span><span class="o">.</span><span class="n">final_priority</span> <span class="o">==</span> <span class="s1">&#39;2&#39;</span><span class="p">)</span>
+<span class="n">run_permutation_test</span><span class="p">(</span><span class="n">medic_sorted_clustered</span><span class="p">,</span> <span class="n">medic_sorted_clustered</span><span class="o">.</span><span class="n">code</span> <span class="o">==</span> <span class="s1">&#39;2&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Code 3 calls: permutation test for difference in mean driving time between worst areas vs others:&#39;</span><span class="p">)</span>
-<span class="n">run_permutation_test</span><span class="p">(</span><span class="n">medic_sorted_clustered</span><span class="p">,</span> <span class="n">medic_sorted_clustered</span><span class="o">.</span><span class="n">final_priority</span> <span class="o">==</span> <span class="s1">&#39;3&#39;</span><span class="p">)</span>
+<span class="n">run_permutation_test</span><span class="p">(</span><span class="n">medic_sorted_clustered</span><span class="p">,</span> <span class="n">medic_sorted_clustered</span><span class="o">.</span><span class="n">code</span> <span class="o">==</span> <span class="s1">&#39;3&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -916,7 +921,7 @@ p-value: 9.999000099990002e-05
 </div>
 </div>
 </div>
-<p><strong>Conclusion</strong>: the areas with the worse driving times are all on the outskirts of the city, which are also the areas with lower population density, lower volume of 911 calls, and lower density of fire stations.</p>
+<p><strong>Conclusion</strong>: the areas with the worse driving times are all on the outskirts of the city (everywhere outside of the enclosed black lines is the Pacific Ocean / SF bay), which are also the areas with lower population density, lower volume of 911 calls, and lower density of fire stations.</p>
 <p>A couple of notes:</p>
 <ol class="arabic simple">
 <li><p>I used a permutation test to test if the difference in means is significant in order to avoid making parametric assumptions in my data, which are not normally distributed.</p></li>
@@ -1050,6 +1055,22 @@ p-value: 9.999000099990002e-05
 </div>
 <p><strong>Conclusion</strong>: There doesn’t seem to be evidence that hospital diversions affect subsequent call response times. Perhaps this is due to the number of hospitals in SF in general, meaning that even if 1 or more hospitals are on diversion status, there are still enough hospitals for ambulances to transport their patients to.</p>
 </section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<p>56% of calls between Jan 2021 and Aug 2024 had a response time greater than 10 minutes. This response times varies across geographic regions and is particularly worse in the outer regions of SF. Response times are also fairly correlated with 911 call arrival rates, which are highest between roughly 10am and 6pm. On average, the first 20% of a response to a call is comprised of SFDEM receiving the call and dispatching a unit, and the other 80% is the SFFD ambulance getting to the scene after being dispatched by SFDEM.</p>
+<section id="id1">
+<h3>Recommendations<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>For only 8% of calls with slow responses, ambulances are dispatched before they are available. That means for the other 92%, the duration of the response time seems to be from SFDEM processing the call and dispatching a unit and the SFFD ambulance getting to the scene after being dispatched. Therefore, I’d recommend investigating the following:</p>
+<ul class="simple">
+<li><p>How SFDEM triages calls and decides whether to send an ambulance. Are there processes or technologies that could make this process more efficient?</p></li>
+<li><p>Can communication between SFDEM and SFFD and other ambulance providers be streamlines in order to dispatch ambulances faster?</p></li>
+<li><p>Do ambulances encounter issues on the road that slow them down while en route to the scene?</p></li>
+<li><p>Is the best choice being made when deciding on a particular ambulance to dispatch to a call?</p></li>
+<li><p>Could ambulances be stationed at more optimal places throughout the day in order to be closer to incoming calls?</p></li>
+</ul>
+<p>I’ll be exploring solutions to the last point by building a simulation of 911 medical calls and using reinforcement learning. Stay tuned!</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1110,7 +1131,7 @@ p-value: 9.999000099990002e-05
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">🚀 Motivation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-insights">🔍 Key Insights</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommendations">🔧 Recommendations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of contents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">📋 Table of contents</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-data">About the data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#high-level-analytics">High level analytics</a></li>
@@ -1119,6 +1140,10 @@ p-value: 9.999000099990002e-05
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispatching-busy-ambulances">Dispatching busy ambulances</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spatial-analysis-of-driving-times">Spatial analysis of driving times</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#affect-of-hospital-diversions-on-response-times">Affect of hospital diversions on response times</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Recommendations</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
