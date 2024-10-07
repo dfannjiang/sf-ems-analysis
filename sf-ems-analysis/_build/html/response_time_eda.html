@@ -1034,6 +1034,7 @@ Let’s visualize which stages take up the biggest portions of the total respons
     <span class="n">sampled</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="n">group1</span> <span class="o">=</span> <span class="n">sampled</span><span class="p">[</span><span class="n">sampled</span><span class="o">.</span><span class="n">worst_clusters</span><span class="p">]</span><span class="o">.</span><span class="n">response_to_onscene</span>
     <span class="n">group2</span> <span class="o">=</span> <span class="n">sampled</span><span class="p">[</span><span class="o">~</span><span class="n">sampled</span><span class="o">.</span><span class="n">worst_clusters</span><span class="p">]</span><span class="o">.</span><span class="n">response_to_onscene</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Difference in means: </span><span class="si">{</span><span class="n">group1</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">group2</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
     <span class="c1"># Run the permutation test</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">permutation_test</span><span class="p">((</span><span class="n">group1</span><span class="p">,</span> <span class="n">group2</span><span class="p">),</span> 
@@ -1064,19 +1065,22 @@ Let’s visualize which stages take up the biggest portions of the total respons
 </details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Code 2 calls: permutation test for difference in mean driving time between worst areas vs others:
+Difference in means: 1.6505349372204687
 p-value: 9.999000099990002e-05
 
 Code 3 calls: permutation test for difference in mean driving time between worst areas vs others:
+Difference in means: 1.136185511336416
 p-value: 9.999000099990002e-05
 </pre></div>
 </div>
 </div>
 </div>
-<p><strong>Conclusion</strong>: the areas with the worse driving times are all on the outskirts of the city (everywhere outside of the enclosed black lines is the Pacific Ocean / SF bay), which are also the areas with lower population density, lower volume of 911 calls, and lower density of fire stations.</p>
+<p><strong>Conclusion</strong>: On average, it takes 1-2 minutes longer for SFFD ambulances to get to the scene of calls in the outskirts of the city, and we have evidence that this difference is statistically significant, or that it is very unlikely to be due to change. In the case of SF, the outskirts are the areas with lower population density, lower volume of 911 calls, and lower density of fire stations.</p>
 <p>A couple of notes:</p>
 <ol class="arabic simple">
+<li><p>For those not familiar with the geography of SF, everywhere outside of the enclosed black lines is the Pacific Ocean / San Francisco Bay.</p></li>
 <li><p>I used a permutation test to test if the difference in means is significant in order to avoid making parametric assumptions in my data, which are not normally distributed.</p></li>
-<li><p>In this analysis, I did not weight driving times by the population or amount of calls in a given geographic area. In my perspective, this is one way to promote equity; SF’s EMS system should be</p></li>
+<li><p>In this analysis, I did not weight avg driving times by the population or amount of calls in a given geographic area. This is one way to see if SF’s EMS system provides service fairly across geographic areas, but in the literature, not all EMS systems view equity and optimize their operations for this. For more discussion, see <a class="reference external" href="https://www.tandfonline.com/doi/full/10.1080/10903127.2024.2352582#abstract">Achieving Equity in EMS Care and Patient Outcomes Through Quality Management Systems: A Position Statement</a>.</p></li>
 </ol>
 </section>
 <section id="affect-of-hospital-diversions-on-response-times">
