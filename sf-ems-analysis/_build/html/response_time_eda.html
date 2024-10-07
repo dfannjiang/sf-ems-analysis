@@ -415,15 +415,26 @@ hide-input: true<a class="headerlink" href="#jupyter-hide-input-true" title="Lin
 <li><p>Responses with negative response times</p></li>
 <li><p>Responses where the response time is greater than 2 hours.</p></li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="n">rcParams</span>
 <span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">6</span>
 </pre></div>
 </div>
 </div>
+</details>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s1">&#39;raw_data_analysis/08122024-5yr.parquet&#39;</span><span class="p">)</span>
@@ -467,10 +478,16 @@ hide-input: true<a class="headerlink" href="#jupyter-hide-input-true" title="Lin
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;received_to_dispatch&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">dispatch_dttm</span> <span class="o">-</span> <span class="n">df</span><span class="o">.</span><span class="n">received_dttm</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span> <span class="o">/</span> <span class="mi">60</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;dispatch_to_response&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">response_dttm</span> <span class="o">-</span> <span class="n">df</span><span class="o">.</span><span class="n">dispatch_dttm</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span> <span class="o">/</span> <span class="mi">60</span>
@@ -480,12 +497,18 @@ hide-input: true<a class="headerlink" href="#jupyter-hide-input-true" title="Lin
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 </section>
 <section id="high-level-analytics">
 <h2>High level analytics<a class="headerlink" href="#high-level-analytics" title="Link to this heading">#</a></h2>
 <p>From Jan 2021 to Aug 2024, SFFD responded to 467,363 calls that needed an ambulance, or roughly 150-350 calls per day (see below). 66% (309,594) of these calls have a latitude/longitude and positive response times, so we’ll focus our analysis on these calls from now on.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tmp</span> <span class="o">=</span> <span class="n">raw</span><span class="p">[</span><span class="n">raw</span><span class="o">.</span><span class="n">unit_type</span> <span class="o">==</span> <span class="s1">&#39;MEDIC&#39;</span><span class="p">]</span>
 <span class="n">tmp</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;call_date&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">call_number</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
@@ -495,12 +518,18 @@ hide-input: true<a class="headerlink" href="#jupyter-hide-input-true" title="Lin
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <img alt="_images/f5a45cbf392a3bf00409f808793817137abbec483d8ce813ae5be9818465440f.png" src="_images/f5a45cbf392a3bf00409f808793817137abbec483d8ce813ae5be9818465440f.png" />
 </div>
 </div>
 <p>Below shows quantiles of response times for code 3 (life threatening) and code 2 (non-life threatening) calls. As you can see, SFFD and SFDEM response to code 2 calls much slower than code 3 calls. At least part of this is due to ambulances driving without lights and sirens for these calls (<a class="reference external" href="https://app.powerbigov.us/view?r=eyJrIjoiZWE0ZjE3OTEtYjE3Yi00YzJiLTgzOTEtOWU3ZGY2YzU4NTYwIiwidCI6IjIyZDVjMmNmLWNlM2UtNDQzZC05YTdmLWRmY2MwMjMxZjczZiJ9">source</a>).</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -536,6 +565,7 @@ hide-input: true<a class="headerlink" href="#jupyter-hide-input-true" title="Lin
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <img alt="_images/1501612927399602573bbdeae8146f99987c251007a9957725eb6bbefc707ddf.png" src="_images/1501612927399602573bbdeae8146f99987c251007a9957725eb6bbefc707ddf.png" />
 </div>
@@ -544,7 +574,12 @@ hide-input: true<a class="headerlink" href="#jupyter-hide-input-true" title="Lin
 <section id="exploring-slow-response-times">
 <h2>Exploring slow response times<a class="headerlink" href="#exploring-slow-response-times" title="Link to this heading">#</a></h2>
 <p>For this analysis, a call with a “slow” response time means that it took more than 10 minutes for the first ambulance to arrive on scene. As mentioned before, SFFD uses a similar metric by which to measure their response times. To ensure we’re looking at high quality data, we’ll also remove calls for which the response times is more than 2 hours, which is similar to how SF does their analysis (<a class="reference external" href="https://www.sf.gov/data/response-times-911-calls#ambulance-code-3-vehicle-response">source</a>). <strong>From now on, we’ll only consider calls with late responses</strong>.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 
@@ -566,11 +601,17 @@ hide-input: true<a class="headerlink" href="#jupyter-hide-input-true" title="Lin
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <img alt="_images/2503600ebe619597812ed31b93483b627e81b9c0ad5df64a5d9ea580bab711d2.png" src="_images/2503600ebe619597812ed31b93483b627e81b9c0ad5df64a5d9ea580bab711d2.png" />
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;received_hour&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">received_dttm</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">hour</span>
 <span class="n">medic</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;received_hour&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">medic</span><span class="o">.</span><span class="n">received_dttm</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">hour</span>
@@ -579,11 +620,17 @@ hide-input: true<a class="headerlink" href="#jupyter-hide-input-true" title="Lin
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 </div>
 </div>
 <p>As we can see below, there is a strong association between response times and volume of calls in that time period: Avg response times peak on friday when most calls during the week happen, and particularly between 10am and 6pm when most calls during a day happen.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">medic_onscene_day</span> <span class="o">=</span> <span class="n">medic</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;received_day_of_week&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">received_to_onscene</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 <span class="n">tmp</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;call_number&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">received_day_of_week</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
@@ -617,11 +664,17 @@ hide-input: true<a class="headerlink" href="#jupyter-hide-input-true" title="Lin
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <img alt="_images/907d94dd5662d350880c4e74e3f47fa4ede5d525b1ddacfd5175764de6d10c57.png" src="_images/907d94dd5662d350880c4e74e3f47fa4ede5d525b1ddacfd5175764de6d10c57.png" />
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">medic_onscene_hr</span> <span class="o">=</span> <span class="n">medic</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;received_hour&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">received_to_onscene</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 <span class="n">tmp</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;call_number&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">received_hour</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
@@ -654,12 +707,18 @@ hide-input: true<a class="headerlink" href="#jupyter-hide-input-true" title="Lin
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <img alt="_images/a9618a738a4ad4d8ba46b1a06dd458c0e54ff9fb127fbacbd66f34bf5e0ecaa2.png" src="_images/a9618a738a4ad4d8ba46b1a06dd458c0e54ff9fb127fbacbd66f34bf5e0ecaa2.png" />
 </div>
 </div>
 <p>Additionally, the response time is very left skewed, so in general we will log transform the total response time in the visualizations</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fix</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">medic</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;received_to_onscene&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;code&#39;</span><span class="p">);</span>
@@ -671,6 +730,7 @@ hide-input: true<a class="headerlink" href="#jupyter-hide-input-true" title="Lin
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <img alt="_images/2a15d5dbb49518eb64eccb9a1cdc554da8c2e3f98fb62abd0dc27473fa4280d2.png" src="_images/2a15d5dbb49518eb64eccb9a1cdc554da8c2e3f98fb62abd0dc27473fa4280d2.png" />
 </div>
@@ -681,7 +741,12 @@ hide-input: true<a class="headerlink" href="#jupyter-hide-input-true" title="Lin
 <p>In the data, we have the following timestamps:
 <img alt="response-time-breakdown.png" src="_images/response-time-breakdown.png" />
 Let’s visualize which stages take up the biggest portions of the total response time and how they’re correlated with the total response time.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">medic</span><span class="p">[</span><span class="s1">&#39;received_to_dispatch_perc&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">medic</span><span class="o">.</span><span class="n">received_to_dispatch</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">/</span> <span class="n">medic</span><span class="o">.</span><span class="n">received_to_onscene</span>
@@ -694,10 +759,16 @@ Let’s visualize which stages take up the biggest portions of the total respons
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">medic</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
             <span class="n">x</span><span class="o">=</span><span class="s1">&#39;received_to_dispatch_perc&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;received_to_onscene_log&#39;</span><span class="p">,</span>
@@ -709,11 +780,17 @@ Let’s visualize which stages take up the biggest portions of the total respons
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <img alt="_images/58f15d23abf4e0201a2e8e679d3eadd9507c15a51e108e387c0230518bc23842.png" src="_images/58f15d23abf4e0201a2e8e679d3eadd9507c15a51e108e387c0230518bc23842.png" />
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">medic</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
             <span class="n">x</span><span class="o">=</span><span class="s1">&#39;dispatch_to_response_perc&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;received_to_onscene_log&#39;</span><span class="p">,</span>
@@ -725,11 +802,17 @@ Let’s visualize which stages take up the biggest portions of the total respons
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <img alt="_images/caef778469f8a7bb1085942e40e495e554f982036b2d7b04c804d32372a18e05.png" src="_images/caef778469f8a7bb1085942e40e495e554f982036b2d7b04c804d32372a18e05.png" />
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">medic</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
             <span class="n">x</span><span class="o">=</span><span class="s1">&#39;response_to_onscene_perc&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;received_to_onscene_log&#39;</span><span class="p">,</span>
@@ -741,6 +824,7 @@ Let’s visualize which stages take up the biggest portions of the total respons
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <img alt="_images/2b99fdb46cbd57d90a2cdd5c556bbeb2ca1468937a4b0611732eb8093ff259e3.png" src="_images/2b99fdb46cbd57d90a2cdd5c556bbeb2ca1468937a4b0611732eb8093ff259e3.png" />
 </div>
@@ -750,7 +834,12 @@ Let’s visualize which stages take up the biggest portions of the total respons
 <section id="dispatching-busy-ambulances">
 <h2>Dispatching busy ambulances<a class="headerlink" href="#dispatching-busy-ambulances" title="Link to this heading">#</a></h2>
 <p>For 8% of calls of slow repsonse times, the ambulance that was dispatched was not yet available when SFDEM received the call. Let’s see this impact on the time it takes to dispatch an ambulance:</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">medic_sorted</span> <span class="o">=</span> <span class="n">medic</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;received_dttm&#39;</span><span class="p">)</span>
 <span class="n">medic_sorted</span><span class="p">[</span><span class="s1">&#39;prev_avail&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
@@ -765,8 +854,14 @@ Let’s visualize which stages take up the biggest portions of the total respons
 </pre></div>
 </div>
 </div>
+</details>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">medic_sorted</span><span class="o">.</span><span class="n">prev_rest_min</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">medic_sorted</span><span class="p">)</span>
 <span class="n">medic_sorted</span><span class="p">[</span><span class="s1">&#39;avail_when_received&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">medic_sorted</span><span class="o">.</span><span class="n">prev_rest_min</span> <span class="o">&gt;</span> <span class="mi">0</span>
@@ -776,6 +871,7 @@ Let’s visualize which stages take up the biggest portions of the total respons
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <img alt="_images/4b47072ca769164c49365fa9066f92f96e1fa08ba7cc2585da8d879034863985.png" src="_images/4b47072ca769164c49365fa9066f92f96e1fa08ba7cc2585da8d879034863985.png" />
 </div>
@@ -786,7 +882,12 @@ Let’s visualize which stages take up the biggest portions of the total respons
 <h2>Spatial analysis of driving times<a class="headerlink" href="#spatial-analysis-of-driving-times" title="Link to this heading">#</a></h2>
 <p><img alt="driving-time-breakdown.png" src="_images/driving-time-breakdown.png" /></p>
 <p>Let’s see if the duration of an ambulance responding to the scene are significantly different for different areas of SF. This may not entirely be due to driving, but I will call it “driving time” for simplicity. To split SF into different regions, I define 50 geographic regions using K-Means on the call locations. 50 was chosen because there are roughly that number of fire stations in SF, but the number itself is not important. Next, I display the top 15 clusters with the longest average response times (along with fire stations in green):</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dedup_calls</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">condition</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -811,8 +912,14 @@ Let’s visualize which stages take up the biggest portions of the total respons
 </pre></div>
 </div>
 </div>
+</details>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">cluster</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">dedup_calls</span><span class="p">(</span><span class="n">medic_sorted</span><span class="p">)</span>
@@ -827,11 +934,17 @@ Let’s visualize which stages take up the biggest portions of the total respons
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <img alt="_images/8b8ee11e4165d301daec8cc13a2e1eb360db5460f6eba0d6f7ce9fd4cfd2738e.png" src="_images/8b8ee11e4165d301daec8cc13a2e1eb360db5460f6eba0d6f7ce9fd4cfd2738e.png" />
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">medic_sorted_clustered</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">medic_sorted</span><span class="p">,</span> <span class="n">preds</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;slong&#39;</span><span class="p">,</span> <span class="s1">&#39;slat&#39;</span><span class="p">])</span>
 <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">medic_sorted</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">medic_sorted_clustered</span><span class="p">)</span>
@@ -839,8 +952,14 @@ Let’s visualize which stages take up the biggest portions of the total respons
 </pre></div>
 </div>
 </div>
+</details>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
 <span class="n">nhoods</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;raw_data_analysis/Analysis Neighborhoods.geojson&#39;</span><span class="p">)</span>
@@ -848,8 +967,14 @@ Let’s visualize which stages take up the biggest portions of the total respons
 </pre></div>
 </div>
 </div>
+</details>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">show_clusters</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">condition</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">ax</span><span class="p">):</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()[</span><span class="n">condition</span><span class="p">]</span>
@@ -869,8 +994,14 @@ Let’s visualize which stages take up the biggest portions of the total respons
 </pre></div>
 </div>
 </div>
+</details>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">show_clusters</span><span class="p">(</span><span class="n">medic_sorted_clustered</span><span class="p">,</span> <span class="n">medic_sorted_clustered</span><span class="o">.</span><span class="n">code</span> <span class="o">==</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span>
@@ -880,11 +1011,17 @@ Let’s visualize which stages take up the biggest portions of the total respons
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <img alt="_images/903f5a58df9acdc563eb71c1367566bbb67f674d0203fca0bd907ec1c9d1c893.png" src="_images/903f5a58df9acdc563eb71c1367566bbb67f674d0203fca0bd907ec1c9d1c893.png" />
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">permutation_test</span>
 
@@ -907,8 +1044,14 @@ Let’s visualize which stages take up the biggest portions of the total respons
 </pre></div>
 </div>
 </div>
+</details>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Code 2 calls: permutation test for difference in mean driving time between worst areas vs others:&#39;</span><span class="p">)</span>
 <span class="n">run_permutation_test</span><span class="p">(</span><span class="n">medic_sorted_clustered</span><span class="p">,</span> <span class="n">medic_sorted_clustered</span><span class="o">.</span><span class="n">code</span> <span class="o">==</span> <span class="s1">&#39;2&#39;</span><span class="p">)</span>
@@ -918,6 +1061,7 @@ Let’s visualize which stages take up the biggest portions of the total respons
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Code 2 calls: permutation test for difference in mean driving time between worst areas vs others:
 p-value: 9.999000099990002e-05
@@ -942,14 +1086,25 @@ p-value: 9.999000099990002e-05
 <li><p>Get the number of hospitals on diversion status for each 30 min interval for which we have data (Jan 2023 - Aug 2024)</p></li>
 <li><p>For each call, record the number of hospital diversions there were when the call was received (the current period) and 30 minutes before the call was received (the previous period).</p></li>
 </ol>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diversions</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s1">&#39;raw_data_analysis/hospital_diversions.parquet&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</details>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diversions</span><span class="o">.</span><span class="n">duration_in_minutes</span> <span class="o">=</span> <span class="n">diversions</span><span class="o">.</span><span class="n">duration_in_minutes</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
 <span class="n">diversions</span><span class="o">.</span><span class="n">duration_in_minutes</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
@@ -958,11 +1113,17 @@ p-value: 9.999000099990002e-05
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <img alt="_images/7b725d410474193e8d0bec13d280f81a64840f9818d5b744d826596936fa34eb.png" src="_images/7b725d410474193e8d0bec13d280f81a64840f9818d5b744d826596936fa34eb.png" />
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the range of hours you want to analyze</span>
 <span class="n">all_periods</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">diversions</span><span class="p">[</span><span class="s1">&#39;started&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="s1">&#39;30T&#39;</span><span class="p">),</span> 
@@ -978,18 +1139,30 @@ p-value: 9.999000099990002e-05
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">medic_sorted</span><span class="p">[</span><span class="s1">&#39;received_30T&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">medic_sorted</span><span class="o">.</span><span class="n">received_dttm</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="s1">&#39;30min&#39;</span><span class="p">)</span>
 <span class="n">medic_sorted</span><span class="p">[</span><span class="s1">&#39;received_30T_prev&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">medic_sorted</span><span class="o">.</span><span class="n">received_30T</span> <span class="o">-</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</details>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">medic_sorted_with_diversions</span> <span class="o">=</span> <span class="n">medic_sorted</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">diversion_counts</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">,</span>
                                         <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;received_30T&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;period&#39;</span><span class="p">)</span>
@@ -999,8 +1172,14 @@ p-value: 9.999000099990002e-05
 </pre></div>
 </div>
 </div>
+</details>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">medic_sorted_with_diversions</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;diversion_count_curr&#39;</span><span class="p">,</span>
              <span class="n">y</span><span class="o">=</span><span class="s1">&#39;received_to_onscene_log&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">);</span>
@@ -1011,11 +1190,17 @@ p-value: 9.999000099990002e-05
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <img alt="_images/91774ea0a1efc64e1ae4e53a58f442927f44c795a7a5745646654387d5f2cf00.png" src="_images/91774ea0a1efc64e1ae4e53a58f442927f44c795a7a5745646654387d5f2cf00.png" />
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">medic_sorted_with_diversions</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;diversion_count_prev&#39;</span><span class="p">,</span>
              <span class="n">y</span><span class="o">=</span><span class="s1">&#39;received_to_onscene_log&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">);</span>
@@ -1026,11 +1211,17 @@ p-value: 9.999000099990002e-05
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <img alt="_images/451f2810b0b78ad6e0b98bcc5b66022e2f074f4a5b4f5fc36a2f5e22e8bd6167.png" src="_images/451f2810b0b78ad6e0b98bcc5b66022e2f074f4a5b4f5fc36a2f5e22e8bd6167.png" />
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">medic_sorted_with_diversions</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;diversion_count_curr&#39;</span><span class="p">,</span>
              <span class="n">y</span><span class="o">=</span><span class="s1">&#39;received_to_dispatch_perc&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">);</span>
@@ -1041,11 +1232,17 @@ p-value: 9.999000099990002e-05
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <img alt="_images/cbf0ca0c1617b741b15ad838df76993fe616a8c8ea08f6914157bd5bd4fb15b9.png" src="_images/cbf0ca0c1617b741b15ad838df76993fe616a8c8ea08f6914157bd5bd4fb15b9.png" />
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">medic_sorted_with_diversions</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;diversion_count_prev&#39;</span><span class="p">,</span>
              <span class="n">y</span><span class="o">=</span><span class="s1">&#39;received_to_dispatch_perc&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">);</span>
@@ -1056,6 +1253,7 @@ p-value: 9.999000099990002e-05
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <img alt="_images/4364ad043752fefed44fac61939b753f522cb304afec2d3e3422cb21422f038d.png" src="_images/4364ad043752fefed44fac61939b753f522cb304afec2d3e3422cb21422f038d.png" />
 </div>
