@@ -1,11 +1,15 @@
-# Welcome to your Jupyter Book
+# SF EMS Analysis
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+This project aims to explore how San Francisco's Department of Emergency Management (DEM)
+and Fire Department (FD) responds to medical 911 calls and how they can improve.
 
-Check out the content pages bundled with this sample book to see more.
+Roadmap:
+
+1. (see below) Analysis of response times to medical 911 calls in SF.
+2. (TBA) Forecasting medical 911 calls to inform resource needs.
+3. (TBA) Simulating medical 911 calls to test potential operational improvements.
+4. (TBA) Reallocating ambulances optimally using reinforcement learning.
 
 ```{tableofcontents}
+
 ```
