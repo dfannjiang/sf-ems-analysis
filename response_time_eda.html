@@ -53,9 +53,22 @@
     <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-HXPFSZVCHC"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-HXPFSZVCHC');
+            </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-HXPFSZVCHC');
+            </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'response_time_eda';</script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -396,7 +409,7 @@ document.write(`
 <p>The life cycle of a 911 call:</p>
 <p><img alt="ambulance-response-process.png" src="_images/ambulance-response-process.png" /></p>
 <p><em><a class="reference external" href="https://www.sf.gov/data/ambulance-response-life-threatening-emergencies">source</a></em></p>
-<p>According to the <a class="reference external" href="https://www.sf.gov/sites/default/files/2023-12/FY23APRfinal.pdf">2023 SF Annual Performance report</a>, FD responds to 80-90% of 911 calls requiring an ambulance, and their goal is respond in under 10 minutes for code 3 calls (life-threatening) and under 20 minutes for code 2 calls (non-life-threatening). Their definition of their response time is the “Roll/Response” time (see above, <a class="reference external" href="https://www.sf.gov/data/ambulance-response-life-threatening-emergencies">source</a>), which is only a portion of the lifecycle of a 911 call. <strong>However, if I’m the caller, I ultimately care about the entire duration between initating the call and when an ambulance arrives - the “Call Duration” time</strong> (see above). In this project, I analyze DEM and FD’s performance using this metric, which I’ll call the “response time”.</p>
+<p>According to the <a class="reference external" href="https://www.sf.gov/sites/default/files/2023-12/FY23APRfinal.pdf">2023 SF Annual Performance report</a>, FD responds to 80-90% of 911 calls requiring an ambulance, and their goal is respond in under 10 minutes for code 3 calls (life-threatening) and under 20 minutes for code 2 calls (non-life-threatening). Their definition of their response time is the “Roll/Response” time (see above, <a class="reference external" href="https://www.sf.gov/data/ambulance-response-life-threatening-emergencies">source</a>), which is only a portion of the lifecycle of a 911 call. <strong>However, if I’m the caller, I ultimately care about the entire duration between initating the call and when an ambulance arrives - the “Call Duration” time</strong> (see above). In this project, I analyze DEM and FD’s performance using this metric, which I’ll call the “response time” for a call.</p>
 </section>
 <section id="about-the-data">
 <h2>About the data<a class="headerlink" href="#about-the-data" title="Link to this heading">#</a></h2>
