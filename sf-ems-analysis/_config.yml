@@ -35,8 +35,7 @@ execute:
 html:
   code-fold: false  # This enables the ability to fold or hide code.
   code-fancy: false  # Removes the code visibility buttons if you don't want users to toggle visibility.
-  analytics:
-    google_analytics_id: G-HXPFSZVCHC
+  google_analytics_id: G-HXPFSZVCHC
 
 sphinx:
   config:
